@@ -69,9 +69,9 @@ const config = {
         ],
       },
       algolia: {
-        appId: 'YOUR_APP_ID',
-        apiKey: 'YOUR_SEARCH_API_KEY',
-        indexName: 'YOUR_INDEX_NAME',
+        appId: 'YSMNU47L51',
+        apiKey: '16caa11a7af7bf5db56b5f640fa738cd',
+        indexName: 'gh',
         contextualSearch: true,
       },
       prism: {

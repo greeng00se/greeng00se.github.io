@@ -19,11 +19,11 @@ jobs:
         run: yarn install --frozen-lockfile
       - name: Build website
         run: yarn build
-        
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.DEPLOY_TOKEN }}
           publish_dir: ./build
           user_name: greeng00se
           user_email: thegreengoose7@gmail.com
