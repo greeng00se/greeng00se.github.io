@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://greeng00se.github.io/</id>
+    <title>greeng00se Blog</title>
+    <updated>2022-12-29T13:37:19.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://greeng00se.github.io/"/>
+    <subtitle>greeng00se Blog</subtitle>
+    <icon>https://greeng00se.github.io/img/duck.png</icon>
+    <entry>
+        <title type="html"><![CDATA[1]]></title>
+        <id>/1</id>
+        <link href="https://greeng00se.github.io/1"/>
+        <updated>2022-12-29T13:37:19.000Z</updated>
+        <summary type="html"><![CDATA[Hello World]]></summary>
+        <content type="html"><![CDATA[<p>Hello World</p>]]></content>
+    </entry>
+</feed>
