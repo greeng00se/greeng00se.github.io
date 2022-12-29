@@ -6,12 +6,12 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'pro memoria',
+  title: 'greeng00se',
   url: 'https://greeng00se.github.io',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/duck.png',
 
   organizationName: 'greeng00se',
   projectName: 'greeng00se.github.io',
@@ -28,11 +28,7 @@ const config = {
       ({
         blog: {
           showReadingTime: true,
-          editUrl:
-            'https://github.com/greeng00se/greeng00se.github.io/tree/main/',
-        },
-        docs: {
-          sidebarPath: require.resolve('./sidebars.js'),
+          routeBasePath: '/',
           editUrl:
             'https://github.com/greeng00se/greeng00se.github.io/tree/main/',
         },
@@ -47,18 +43,12 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'pro memoria',
+        title: 'greeng00se',
         items: [
           {
-            to: '/blog', 
-            label: 'Blog', 
+            to: '/archive', 
+            label: 'Archive', 
             position: 'left'
-          },
-          {
-            type: 'doc',
-            docId: 'intro',
-            position: 'left',
-            label: 'Docs',
           },
           {
             href: 'https://github.com/greeng00se',
