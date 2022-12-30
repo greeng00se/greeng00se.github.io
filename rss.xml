@@ -4,7 +4,7 @@
         <title>greeng00se Blog</title>
         <link>https://greeng00se.github.io/</link>
         <description>greeng00se Blog</description>
-        <lastBuildDate>Thu, 29 Dec 2022 13:37:19 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 30 Dec 2022 13:30:32 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>ko</language>
@@ -12,7 +12,7 @@
             <title><![CDATA[1]]></title>
             <link>https://greeng00se.github.io/1</link>
             <guid>/1</guid>
-            <pubDate>Thu, 29 Dec 2022 13:37:19 GMT</pubDate>
+            <pubDate>Fri, 30 Dec 2022 13:30:32 GMT</pubDate>
             <description><![CDATA[Hello World]]></description>
             <content:encoded><![CDATA[<p>Hello World</p>]]></content:encoded>
         </item>
