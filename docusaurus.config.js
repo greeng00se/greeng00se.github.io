@@ -69,6 +69,10 @@ const config = {
         darkTheme: darkCodeTheme,
         additionalLanguages: ['java'],
       },
+      metadata: [{
+        name: 'google-site-verification', 
+        content: 'APK6j79LMymudgmQDTV8u_RYyncFYyuFUjY9A0hVPv4'
+      }],
     }),
 };
 
