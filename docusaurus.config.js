@@ -29,6 +29,7 @@ const config = {
         blog: {
           showReadingTime: true,
           routeBasePath: '/',
+          archiveBasePath: '/blog',
           editUrl:
             'https://github.com/greeng00se/greeng00se.github.io/tree/main/',
         },
@@ -46,8 +47,8 @@ const config = {
         title: 'greeng00se',
         items: [
           {
-            to: '/archive', 
-            label: 'Archive', 
+            to: '/blog', 
+            label: 'Blog', 
             position: 'left'
           },
           {
