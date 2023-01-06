@@ -4,44 +4,52 @@ import React, { useEffect, useRef } from "react";
 import { useColorMode } from "@docusaurus/theme-common";
 import { useBlogPost } from "@docusaurus/theme-common/internal";
 
-const utterancesSelector = "iframe.utterances-frame";
+const giscusSelector = "iframe.giscus-frame";
 
 function BlogPostItem(props) {
   const { colorMode } = useColorMode();
   const { isBlogPostPage } = useBlogPost();
-  const utterancesTheme = colorMode === "dark" ? "github-dark" : "github-light";
+  const giscusTheme = colorMode === "dark" ? "dark" : "light";
   const containerRef = useRef(null);
 
   useEffect(() => {
     if (!isBlogPostPage) return;
 
-    const utterancesEl = containerRef.current.querySelector(utterancesSelector);
+    const giscusEl = containerRef.current.querySelector(giscusSelector);
 
-    const createUtterancesEl = () => {
+    const createGiscusEl = () => {
       const script = document.createElement("script");
 
-      script.src = "https://utteranc.es/client.js";
-      script.setAttribute("repo", "greeng00se/greeng00se.github.io");
-      script.setAttribute("issue-term", "pathname");
-      script.setAttribute("label", "comment");
-      script.setAttribute("theme", utterancesTheme);
+      script.src = "https://giscus.app/client.js";
+      script.setAttribute("data-repo", "greeng00se/greeng00se.github.io");
+      script.setAttribute("data-repo-id", "R_kgDOIRAC3w");
+      script.setAttribute("data-category", "Announcements");
+      script.setAttribute("data-category-id", "DIC_kwDOIRAC384CTcGg");
+      script.setAttribute("data-mapping", "pathname");
+      script.setAttribute("data-strict", "0");
+      script.setAttribute("data-reactions-enabled", "1");
+      script.setAttribute("data-emit-metadata", "0");
+      script.setAttribute("data-input-position", "bottom");
+      script.setAttribute("data-theme", giscusTheme);
+      script.setAttribute("data-lang", "ko");
       script.crossOrigin = "anonymous";
       script.async = true;
-
+      
       containerRef.current.appendChild(script);
     };
 
     const postThemeMessage = () => {
       const message = {
-        type: "set-theme",
-        theme: utterancesTheme,
+        setConfig: {
+          theme: giscusTheme,
+        }
       };
 
-      utterancesEl.contentWindow.postMessage(message, "https://utteranc.es");
+      giscusEl.contentWindow.postMessage({ giscus: message }, "https://giscus.app");
     };
 
-    utterancesEl ? postThemeMessage() : createUtterancesEl();
-  }, [utterancesTheme]);
+    giscusEl ? postThemeMessage() : createGiscusEl();
+  }, [giscusTheme]);
 
   return (
     <>
