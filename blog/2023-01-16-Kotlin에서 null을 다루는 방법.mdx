@@ -83,7 +83,7 @@ fun stringSafe(word: String?): String {
 </Tabs>
 
 코틀린에서는 throw도 식이기 때문에 엘비스 연산자를 이용하여 예외를 던질 수 있다.  
-예를 들어 사용자 정보가 있는 저장소에 찾는 사용자가 없는 경우 다음과 같이 말이다.
+예를 들어 사용자 정보가 있는 저장소에 찾는 사용자가 없는 경우 아래와 같이 사용할 수 있다.
 
 ```kotlin
 userRepository.findByName(name) ?: throw IllegalArgumentException()
@@ -106,7 +106,7 @@ val length: Int = word!!.length
 코틀린에서는 as 뒤에 ?를 붙여 안전하게 타입 변환을 할 수 있다.  
 따라서 미리 변환 가능한 타입인지 확인하지 않고, 안전하게 타입을 변환 할 수 있다.  
 
-타입 변환이 불가능 할 경우 예외를 발생시키지 않고 null을 반환합니다.
+타입 변환이 불가능 할 경우 예외를 발생시키지 않고 null을 반환한다.
 
 ```kotlin
 val value: Int? = something as? Int
