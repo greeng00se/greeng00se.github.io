@@ -6,7 +6,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'greeng00se',
+  title: 'GG',
   url: 'https://greeng00se.github.io',
   baseUrl: '/',
   onBrokenLinks: 'throw',
@@ -44,11 +44,11 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'greeng00se',
+        title: 'greengööse',
         items: [
           {
             to: '/blog', 
-            label: 'Blog', 
+            label: '글', 
             position: 'left'
           },
           {
