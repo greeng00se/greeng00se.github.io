@@ -2,11 +2,20 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://greeng00se.github.io/</id>
     <title>GG Blog</title>
-    <updated>2023-01-16T00:00:00.000Z</updated>
+    <updated>2023-01-30T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://greeng00se.github.io/"/>
     <subtitle>GG Blog</subtitle>
     <icon>https://greeng00se.github.io/img/duck.png</icon>
+    <entry>
+        <title type="html"><![CDATA[IntelliJ 설정]]></title>
+        <id>6</id>
+        <link href="https://greeng00se.github.io/6"/>
+        <updated>2023-01-30T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Import 자동 적용]]></summary>
+        <content type="html"><![CDATA[<h3 class="anchor anchorWithStickyNavbar_LWe7" id="import-자동-적용">Import 자동 적용<a class="hash-link" href="#import-자동-적용" title="제목으로 바로 가기">​</a></h3><p>Prefrences &gt; Editor &gt; General &gt; Auto Import &gt; Add unambiguous imports on the fly</p><p><img loading="lazy" alt="auto-import" src="/assets/images/auto-import-3dbe46f0109af17296039d52d498225e.png" width="2558" height="1656" class="img_ev3q"></p><h3 class="anchor anchorWithStickyNavbar_LWe7" id="저장시-동작">저장시 동작<a class="hash-link" href="#저장시-동작" title="제목으로 바로 가기">​</a></h3><p>Prefrences &gt; Tools &gt; Actions on Save</p><p><img loading="lazy" alt="actions-on-save" src="/assets/images/actions-on-save-6c1203027c28ff08919e045812c7d456.png" width="2558" height="1656" class="img_ev3q"></p><p>Reformat Code: Code Reformmating</p><p>Optimize imports: 사용하지 않는 Import 제거</p><p>Rearrange: Code Style &gt; Arrangement 설정 기반 코드 재정렬</p><h3 class="anchor anchorWithStickyNavbar_LWe7" id="메소드-추출-변수-추출시-final-적용">메소드 추출, 변수 추출시 final 적용<a class="hash-link" href="#메소드-추출-변수-추출시-final-적용" title="제목으로 바로 가기">​</a></h3><p>Prefrences &gt; Editor &gt; Code Style &gt; Java &gt; Code Generation &gt; Final Modifier</p><p><img loading="lazy" alt="final-modifier" src="/assets/images/final-modifier-1dd2aea35979423a30869a7b0ebe501a.png" width="2558" height="1656" class="img_ev3q"></p>]]></content>
+        <category label="IntelliJ" term="IntelliJ"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Kotlin에서 null을 다루는 방법]]></title>
         <id>5</id>
