@@ -20,6 +20,12 @@ const config = {
     defaultLocale: "ko",
     locales: ["ko"],
   },
+  markdown: {
+    mermaid: true,
+  },
+  themes: [
+    '@docusaurus/theme-mermaid'
+  ],
 
   presets: [
     [
@@ -74,6 +80,10 @@ const config = {
         name: 'google-site-verification', 
         content: 'APK6j79LMymudgmQDTV8u_RYyncFYyuFUjY9A0hVPv4'
       }],
+      colorMode: {
+        defaultMode: "dark",
+        respectPrefersColorScheme: true,
+      },
     }),
 };
 
