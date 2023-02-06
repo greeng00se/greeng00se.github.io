@@ -84,6 +84,12 @@ const config = {
         defaultMode: "dark",
         respectPrefersColorScheme: true,
       },
+      mermaid: {
+        theme: {
+          light: 'neutral', 
+          dark: 'dark'
+        },
+      },
     }),
 };
 
