@@ -9,7 +9,7 @@
 
 
 <link rel="search" type="application/opensearchdescription+xml" title="GG" href="/opensearch.xml"><link rel="stylesheet" href="/assets/css/styles.95128f9a.css">
-<link rel="preload" href="/assets/js/runtime~main.5cfe48e4.js" as="script">
+<link rel="preload" href="/assets/js/runtime~main.510f3fa4.js" as="script">
 <link rel="preload" href="/assets/js/main.0ca79c32.js" as="script">
 </head>
 <body class="navigation-with-keyboard">
@@ -37,8 +37,8 @@
 시간을 가지고 생각해 보니 Position을 가지고 있는 건 Player기 때문에 생성 책임을 Player가 담당하는 것이 좋다고 생각되었다.  </p><p>생성 책임에 관한 패턴으로 GRASP의 Creator 패턴이 있는데 다음의 요소를 최대한 만족하는 클래스에 생성 책임을 할당하는 것이 좋다.  </p><ul><li>B가 A 객체를 포함 또는 참조한다.</li><li>B가 A 객체를 기록한다.</li><li>B가 A를 긴밀하게 사용한다.</li><li>B가 A의 초깃값을 가지고 있다.  </li></ul><p>실제로 객체의 생성 책임에 관해서 깊이 생각하면서 코딩을 하지 않았는데, 이번 미션을 통해 시야가 넓어진 것 같다.</p><p><strong>패키지 분리 기준</strong><br>
 <!-- -->패키지 분리에 대한 나만의 기준이 아직 명확하지 않아 질문이 들어와도 명확하게 답변을 하지 못했다.<br>
 <!-- -->마지막 제출 전에 도메인 패키지 내부를 분리해 봤는데, 기준이 명확하지 않았기 때문에 좋지 않은 선택이었던 것 같다.
-현재 진행하는 미션의 애플리케이션 크기가 그렇게 크지 않으니, domain 패키지에서 세부 패키지로 분리하지 않아도 될 것 같다.  </p><p><strong>사용하는 쪽에서 생각하기</strong><br>
-<!-- -->Position에서 다음 위치나 이전 위치를 반환하는 메서드를 허용 범위(0~19)가 벗어난다면, 의미 없는 값이 들어간 객체를 반환하도록 했다.<br>
+현재 진행하는 미션의 애플리케이션 크기가 그렇게 크지 않으니, domain 패키지에서 세부 패키지로 분리하지 않아도 될 것 같다.  </p><p><strong>사용하는 쪽에서 생각하기 &amp; 예측가능한 코드 작성하기</strong><br>
+<!-- -->Position에서 다음 위치나 이전 위치를 반환하는 메서드를 허용 범위(0~19)가 벗어난다면, 의미 없는 값이 들어간 Position을 반환하도록 했다.<br>
 <!-- -->이건 Position을 사용하는 입장을 고려하지 못한 코딩이었는데, 사용하는 입장에서는 0~19의 값이 보장되어 있다고 생각할 것이기 때문이다.<br>
 <!-- -->따라서 hasNext, hasPrevious라는 이전 값, 이후 값이 범위 내에 있는지 확인하는 메서드를 추가하고, 기존의 값을 가져오는 메서드는 범위가 벗어나면 예외를 던지는 방향으로 해결하였다.  </p><h3 class="anchor anchorWithStickyNavbar_LWe7" id="페어에게-배울-부분">페어에게 배울 부분<a href="#페어에게-배울-부분" class="hash-link" aria-label="페어에게 배울 부분에 대한 직접 링크" title="페어에게 배울 부분에 대한 직접 링크">​</a></h3><p>밝은 기운을 가지고 있고 다른 사람들과 친화력이 좋은 것 같았다.<br>
 <!-- -->이번에 페어 할 때 컨디션 관리를 제대로 못해서 많이 미안했다. 다음에는 최상의 컨디션으로 페어를 준비해 봐야겠다.<br>
@@ -46,7 +46,7 @@
 <!-- -->또한 페어 진행이 느린 것 같다고 말해줘서 안정적으로 시간 안에 미션을 완료할 수 있었다.<br>
 <!-- -->페어프로그래밍 진행 속도에 대해 조금 더 생각을 해봐야겠다!</p><p>항상 지나갈 때마다 웃어주는데, 나도 자주 웃어야겠다고 생각했다.<br>
 <!-- -->웃는 것만으로도 사람이 밝아 보여서 너무 좋은 것 같다!</p></div><footer class="row docusaurus-mt-lg blogPostFooterDetailsFull_mRVl"><div class="col margin-top--sm"><a href="https://github.com/greeng00se/greeng00se.github.io/tree/main/blog/2023-02-26-사다리 타기 미션 회고.mdx" target="_blank" rel="noreferrer noopener" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>페이지 편집</a></div></footer></article><div></div><nav class="pagination-nav docusaurus-mt-lg" aria-label="블로그 게시물 탐색"><a class="pagination-nav__link pagination-nav__link--next" href="/8/"><div class="pagination-nav__sublabel">다음 게시물</div><div class="pagination-nav__label">자동차 경주 미션 회고</div></a></nav></main><div class="col col--2"><div class="tableOfContents_bqdL thin-scrollbar"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#사다리-타기" class="table-of-contents__link toc-highlight">사다리 타기</a></li><li><a href="#position-기준으로-사다리-게임을-진행하는-방법" class="table-of-contents__link toc-highlight">Position 기준으로 사다리 게임을 진행하는 방법</a></li><li><a href="#player에게-ladder를-전달하여-게임을-진행하는-방법" class="table-of-contents__link toc-highlight">Player에게 Ladder를 전달하여 게임을 진행하는 방법</a></li><li><a href="#부족했던-부분" class="table-of-contents__link toc-highlight">부족했던 부분</a></li><li><a href="#새로-학습한-부분" class="table-of-contents__link toc-highlight">새로 학습한 부분</a></li><li><a href="#페어에게-배울-부분" class="table-of-contents__link toc-highlight">페어에게 배울 부분</a></li></ul></div></div></div></div></div></div>
-<script src="/assets/js/runtime~main.5cfe48e4.js"></script>
+<script src="/assets/js/runtime~main.510f3fa4.js"></script>
 <script src="/assets/js/main.0ca79c32.js"></script>
 </body>
 </html>
