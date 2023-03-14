@@ -2,11 +2,50 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://greeng00se.github.io/</id>
     <title>GG Blog</title>
-    <updated>2023-02-26T00:00:00.000Z</updated>
+    <updated>2023-03-14T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://greeng00se.github.io/"/>
     <subtitle>GG Blog</subtitle>
     <icon>https://greeng00se.github.io/img/duck.png</icon>
+    <entry>
+        <title type="html"><![CDATA[블랙잭 미션 회고]]></title>
+        <id>https://greeng00se.github.io/10</id>
+        <link href="https://greeng00se.github.io/10"/>
+        <updated>2023-03-14T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[블랙잭]]></summary>
+        <content type="html"><![CDATA[<h3 class="anchor anchorWithStickyNavbar_LWe7" id="블랙잭">블랙잭<a href="#블랙잭" class="hash-link" aria-label="블랙잭에 대한 직접 링크" title="블랙잭에 대한 직접 링크">​</a></h3><p>블랙잭 미션에서는 후추와 페어(조미료 듀오?)가 매칭되었다.<br>
+<!-- -->이번에는 실수하지 않고, 바로 미션을 진행하지 않고 친해지기 부터 시작했다.  </p><p>블랙잭은 구현해야 될 내용이 많아 시간이 많이 부족할 것 같았지만<br>
+<!-- -->후추와 함께 전략적(삼일절에 미션 이야기 나누기)으로 미션을 진행해 시간 내에 제출할 수 있었다.  </p><p>미션을 끝나고 회고를 했을 때 후추가 고민거리를 하나 내줬다.<br>
+<!-- -->"페어를 진행할 때 압박감을 느끼는 페어가 있다면 허브가 해줄 수 있는게 뭐가 있을까?"  </p><p>곰곰히 생각해봤지만 쉽게 답을 내릴 수 없었다.<br>
+<!-- -->중간 중간 회고를 하고, 나의 소프트스킬을 높히는게 답일까?<br>
+<!-- -->부담감을 느끼지 않고 같이 일하고 싶은 사람이 될 수 있도록 계속 생각해봐야겠다.  </p><p>이 부분에 대해 생각이 많아져서 전 리뷰어인 터틀🐢과도 대화를 나누었다.<br>
+<!-- -->터틀은 제어할 수 없는 부분보다 제어할 수 있는 부분(궁극적인 목표인 좋은 코드를 작성하는 것)에 집중해보라고 하셨다.  </p><p>좋은 코드, 좋은 페어에 대한 부분을 일단 지속적으로 생각해봐야겠다.</p><h3 class="anchor anchorWithStickyNavbar_LWe7" id="부족했던-부분">부족했던 부분<a href="#부족했던-부분" class="hash-link" aria-label="부족했던 부분에 대한 직접 링크" title="부족했던 부분에 대한 직접 링크">​</a></h3><p><strong>페어 신경쓰기</strong><br>
+<!-- -->이번 페어할 때 적극적으로 의견을 내보도록 했다. 그렇기에 너무 의견을 강하게 밀어붙인 느낌이 들어서 미안했다.<br>
+<!-- -->후추가 압박을 느꼈을 수도 있을 것 같다는 생각이 든다.<br>
+<!-- -->중간 중간 작은 회고를 진행해보는 것이 좋을까?</p><p><strong>체력 관리</strong><br>
+<!-- -->요즘 잘 못먹는 것 같다.<br>
+<!-- -->앞으로 살 날이 많은데 잘 챙겨먹고, 힘내야겠다.</p><p><strong>중간 중간 돌아보기</strong><br>
+<!-- -->이번 미션과 관련된 내용은 아니지만 우테코를 잘 활용 하고 있는지 생각을 해봐야겠다.<br>
+<!-- -->내가 우테코에 지원한 이유를 항상 잊지 않아야겠다.  </p><h3 class="anchor anchorWithStickyNavbar_LWe7" id="새로-학습한-부분">새로 학습한 부분<a href="#새로-학습한-부분" class="hash-link" aria-label="새로 학습한 부분에 대한 직접 링크" title="새로 학습한 부분에 대한 직접 링크">​</a></h3><p><strong>상태 패턴</strong><br>
+<!-- -->객체의 내부 상태에 따라 스스로 행동을 변경하도록 하는 패턴으로 if/else/switch와 같은 조건문을 효과적으로 제거할 수 있다.<br>
+<!-- -->블랙잭 미션을 진행하면서 상태 패턴에 대한 부분을 처음 적용해보았다.<br>
+<!-- -->처음 적용하기 전에는 별로라고 생각했는데, 생각보다 괜찮은 것 같다.  </p><p><strong>일관성, 가독성, 추상화</strong><br>
+<!-- -->이번 리뷰어는 검프🍫 였다!<br>
+<!-- -->검프의 리뷰는 간결함에 관련된 내용이 많았다.<br>
+<!-- -->일관성이 있는 코드, 가독성이 좋은 코드, 추상화가 잘 되어있는 코드<br>
+<!-- -->읽기 좋고, 간결한 방향으로 코드를 작성하는 방법을 배운 것 같다.<br>
+<!-- -->코드를 바라보는 시점이 하나 늘어난 기분이다!(앞으로 적용하는 것은 나의 몫이지만)  </p><h3 class="anchor anchorWithStickyNavbar_LWe7" id="페어에게-배울-부분">페어에게 배울 부분<a href="#페어에게-배울-부분" class="hash-link" aria-label="페어에게 배울 부분에 대한 직접 링크" title="페어에게 배울 부분에 대한 직접 링크">​</a></h3><p><strong>생각 정리</strong><br>
+<!-- -->중간 중간 현재 상황에 대해 그림을 그리거나, 글을 적으면서 정리한다.<br>
+<!-- -->페어와 동일한 부분을 이해하고 있는지 확인한다.<br>
+<!-- -->진행하는데 매우 도움이 되었던 것 같다.<br>
+<!-- -->나도 다음 페어때부터 펜이랑 종이를 준비해야겠다.</p><p><strong>가감없이 의견을 말해주는 부분</strong><br>
+<!-- -->진행 상황에 대한 부분, 진행 속도, 지금 자신이 이해하고 있는 부분을 말해줘서 편했다.<br>
+<!-- -->회고때도 서로 솔직하게 의견을 주고 받아서 좋았다.  </p><p><strong>도메인 언어에 신경쓰는 부분</strong><br>
+<!-- -->클래스명, 변수명과 같은 언어를 세심하게 신경쓴다.<br>
+<!-- -->요구사항 정리도 깔끔하게 잘하는 것 같다.  </p><p>후추 최고 👍</p>]]></content>
+        <category label="Woowahan Techcourse" term="Woowahan Techcourse"/>
+        <category label="Retrospective" term="Retrospective"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[사다리 타기 미션 회고]]></title>
         <id>https://greeng00se.github.io/9</id>
