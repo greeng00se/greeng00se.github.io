@@ -188,14 +188,18 @@ private void executeUpdate(final String query, final Object... parameters) {
 조회는 INSERT, DELETE와 달리 값을 반환받아야 하기 때문에 다른 방법을 사용해야 한다.  
 이 때 콜백이라는 것을 사용하여 중복을 제거할 수 있다.  
 
-![image](https://user-images.githubusercontent.com/58586537/227392528-8139e442-45f7-451b-80e4-845986c791b1.png)
-
 :::note 콜백(Callback)
 
 프로그래밍에서 콜백은 다른 코드의 인수로 넘겨주는 실행 가능한 코드를 뜻한다.  
 자바에서는 람다나 익명 클래스를 넘겨서 사용할 수 있다.
+```mermaid
+flowchart LR
+    클라이언트 -- 콜백전달 --> 메서드
+    메서드 -- 내부호출 --> 전달받은콜백
+```
 
 :::
+
 
 데이터베이스에서 값을 조회하고, 해당 값을 객체로 매핑하여 값을 반환해야 한다.  
 executeQuery로 조회한 값은 ResultSet 안에 들어가있다.  
