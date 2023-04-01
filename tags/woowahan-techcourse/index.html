@@ -9,7 +9,7 @@
 
 
 <link rel="search" type="application/opensearchdescription+xml" title="GG" href="/opensearch.xml"><link rel="stylesheet" href="/assets/css/styles.95128f9a.css">
-<link rel="preload" href="/assets/js/runtime~main.dd3ceef0.js" as="script">
+<link rel="preload" href="/assets/js/runtime~main.53c585ae.js" as="script">
 <link rel="preload" href="/assets/js/main.36cf6897.js" as="script">
 </head>
 <body class="navigation-with-keyboard">
@@ -23,14 +23,14 @@
 <!-- -->직선 → Rank와 File 차이 중 하나가 0이어야 한다.<br>
 <!-- -->대각선 → Rank와 File 차이의 절대값이 같아야 한다. ex) abs(-2) == abs(2)<br>
 <!-- -->나이트 → 차이의 절대값이 하나는 2 나머지 하나는 1이어야 한다.</p><p><strong>도착 칸의 기물 여부</strong><br>
-<!-- -->아군 → 아군인 경우 이동이 불가능하다.<br>
-<!-- -->적군 → 적군의 경우 이동이 가능하다.  </p><p><strong>중간에 기물 존재 여부</strong><br>
+<!-- -->아군 → 이동이 불가능하다.<br>
+<!-- -->적군 → 이동이 가능하다. 적군을 잡는다.  </p><p><strong>중간에 기물 존재 여부</strong><br>
 <!-- -->이동 경로에 기물이 존재하면 안된다.  </p><p><strong>데이터베이스 사용</strong><br>
 <!-- -->체스 미션은 특별하게 데이터베이스와 연결하는 부분이 있었다.<br>
 <!-- -->체스 게임의 상태를 다음의 두가지 방법으로 정할 수 있다고 생각했다.  </p><ul><li>기물 전체를 저장하는 방법  </li><li>기보를 저장하고 게임을 불러와 기보대로 이동시키는 방법  </li></ul><p>기물이 이동할 때마다 값을 저장하고 싶었고, 기보를 저장하는 방법을 선택했다.<br>
 <!-- -->기물 전체를 저장하지 않은 이유는 다음과 같다.  </p><ul><li>턴과 같은 부가적인 요소를 저장해야 한다.  </li><li>이동을 할 때 기물이 잡히는 경우 update 쿼리(이동 기물)와 delete(잡힌 기물) 2개의 쿼리를 날려야 한다.  </li><li>현재 구조에서 도메인의 변경이 크게(초기 상태를 구성하는 부분) 일어나야 한다.  </li></ul><p>정리하자면 기물 전체 저장과 기보 저장은 다음과 차이가 있다.<br>
 <!-- -->보드저장: 초기상태에서 32개의 Insert 쿼리(기물의 위치) + 기물 이동 시 움직임 변경(잡히는 경우 2개의 쿼리)<br>
-<!-- -->기보저장: 초기상태 애플리케이션에서 구성 + 저장된 기보를 select 쿼리로 조회해서 사용(1회) + insert 쿼리(이동 당 1회)</p><p>또한 구현도 더욱 간단하다!  </p><p><strong>부가적인 부분</strong></p><p>동시에 여러 게임이 진행된다면 어떨까? 에 대한 코멘트를 남겨주셔서 다양한 시도를 해봤다.  </p><ul><li>누누의 도움으로 ConnectionPool 구현  </li><li>ThreadLocal 사용해서 쓰레드 별 세션 관리  </li><li>실제로 애플리케이션 내에서 체스 게임이 진행되는 Board를 ConcurrentHashMap으로 저장(사실 이 부분은 현재 구조에서 필요없지만 2명이 서로 게임하는 경우를 생각해서 넣어보았다.)  </li></ul><p>두 명이 서로 같은 방에 입장하여 게임을 진행한다면 출력하는 부분이 까다로워질 것 같다고 예상되어(Board에 옵저버 패턴을 사용해야되나?) 해볼 엄두가 나지 않았다.  </p><h3 class="anchor anchorWithStickyNavbar_LWe7" id="부족했던-부분">부족했던 부분<a href="#부족했던-부분" class="hash-link" aria-label="부족했던 부분에 대한 직접 링크" title="부족했던 부분에 대한 직접 링크">​</a></h3><p><strong>꼼꼼하게 코드를 작성하지 못한 부분</strong><br>
+<!-- -->기보저장: 초기상태 애플리케이션에서 구성 + 저장된 기보를 select 쿼리로 조회해서 사용(1회) + insert 쿼리(이동 당 1회)</p><p>또한 도메인 로직을 변경하지 않아도 되기 때문에 구현도 더욱 간단하다!  </p><p><strong>부가적인 부분</strong></p><p>동시에 여러 게임이 진행된다면 어떨까? 에 대한 코멘트를 남겨주셔서 다양한 시도를 해봤다.  </p><ul><li>누누의 도움으로 ConnectionPool 구현  </li><li>ThreadLocal 사용해서 쓰레드 별 세션 관리  </li><li>실제로 애플리케이션 내에서 체스 게임이 진행되는 Board를 ConcurrentHashMap으로 저장(사실 이 부분은 현재 구조에서 필요없지만 2명이 서로 게임하는 경우를 생각해서 넣어보았다.)  </li></ul><p>두 명이 서로 같은 방에 입장하여 게임을 진행한다면 출력하는 부분이 까다로워질 것 같다고 예상되어(Board에 옵저버 패턴을 사용해야되나?) 해볼 엄두가 나지 않았다.  </p><h3 class="anchor anchorWithStickyNavbar_LWe7" id="부족했던-부분">부족했던 부분<a href="#부족했던-부분" class="hash-link" aria-label="부족했던 부분에 대한 직접 링크" title="부족했던 부분에 대한 직접 링크">​</a></h3><p><strong>꼼꼼하게 코드를 작성하지 못한 부분</strong><br>
 <!-- -->DB 관련 부분을 꼼꼼하게 코딩을 하지 못했다.<br>
 <!-- -->도메인 로직에만 집중하다보니 정적 중요한 DB의 코드의 예외처리, 빈 값을 반환 하는 부분을 꼼꼼하게 처리하지 못했다.<br>
 <!-- -->하지만 찰리의 꼼꼼한 리뷰로 DB부분과 나만의 JdbcTemplate을 깔끔하게 구현할 수 있었다.  </p><p><strong>시간에 대한 부담감</strong><br>
@@ -134,7 +134,7 @@
 <!-- -->그래서 즐거운 마음으로 페어 프로그래밍을 했었던 것 같다.</p><p>어떤 이유 때문인지 모르겠지만 같이 페어하는데 편한 마음이 들었다.<br>
 <!-- -->이건 바로 배울 수 없지만.<br>
 <!-- -->나도 같이 일할 때 편한 사람, 같이 일하고 싶은 사람이 되기 위해 깊이 고민해봐야겠다.</p></div><footer class="row docusaurus-mt-lg"><div class="col"><b>태그:</b><ul class="tags_jXut padding--none margin-left--sm"><li class="tag_QGVx"><a class="tag_zVej tagRegular_sFm0" href="/tags/woowahan-techcourse/">Woowahan Techcourse</a></li><li class="tag_QGVx"><a class="tag_zVej tagRegular_sFm0" href="/tags/retrospective/">Retrospective</a></li></ul></div></footer></article><nav class="pagination-nav" aria-label="블로그 게시물 목록 탐색"></nav></main></div></div></div></div>
-<script src="/assets/js/runtime~main.dd3ceef0.js"></script>
+<script src="/assets/js/runtime~main.53c585ae.js"></script>
 <script src="/assets/js/main.36cf6897.js"></script>
 </body>
 </html>
