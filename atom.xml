@@ -2,11 +2,52 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://greeng00se.github.io/</id>
     <title>GG Blog</title>
-    <updated>2023-03-31T00:00:00.000Z</updated>
+    <updated>2023-04-01T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://greeng00se.github.io/"/>
     <subtitle>GG Blog</subtitle>
     <icon>https://greeng00se.github.io/img/duck.png</icon>
+    <entry>
+        <title type="html"><![CDATA[우아한테크코스 레벨 1 회고]]></title>
+        <id>https://greeng00se.github.io/13</id>
+        <link href="https://greeng00se.github.io/13"/>
+        <updated>2023-04-01T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[레벨 1이 끝났다.]]></summary>
+        <content type="html"><![CDATA[<p>레벨 1이 끝났다.<br>
+<!-- -->우테코를 시작하기 전 내가 정해두었던 목표 이상으로 달성했기 때문에 매우 만족스럽다.<br>
+<!-- -->혼자 독학을 할 땐 이 방향으로 공부하는 게 맞는지 계속 반추하다 결국 무기력함에 빠져들었다.<br>
+<!-- -->하지만 이제는 같이 공부할 사람도 있고, 이야기할 사람도 있기 때문에 즐기는 일만 남은 것 같다.  </p><h3 class="anchor anchorWithStickyNavbar_LWe7" id="keep">Keep<a href="#keep" class="hash-link" aria-label="Keep에 대한 직접 링크" title="Keep에 대한 직접 링크">​</a></h3><p><strong>나만의 루틴 만들기</strong>  </p><p>스스로가 외부의 영향을 많이 받는다고 생각한다.<br>
+<!-- -->최대한 꾸준히 할 수 있는 시간을 만드는 것이 중요하다고 생각한다.  </p><p>매일 8시에 도착하여 아침에 해야 할 일을 정리하거나, 우선순위에 따라 처리하고<br>
+<!-- -->소화능력이 부족하기 때문에 점심은 도시락(그래봤자 계란2개)을 준비하고<br>
+<!-- -->항상 똑같은 컨디션을 유지하기 위해 항상 6시에 집에 간다.<br>
+<!-- -->이제 바빠질 테니 일찍 집에 가는 일은 어쩔 수 없이 줄어들겠지만😢  </p><p>선택도 비용이다. 앞으로 의사결정이 필요 없는 부분을 최대한 많이 만들어야겠다.  </p><p><strong>크루들과 친하게 지내기</strong>  </p><p>10명 정도의 크루의 닉네임을 외우고 친하게 지낸다면 성공적이라고 생각했었다.<br>
+<!-- -->하다 보니 더 많은 크루들의 닉네임을 외운 것 같다.<br>
+<!-- -->앞으로도 크루들과 친하게 지내고 아무 때나 말을 걸 수 있는 크루가 늘어나길 :)  </p><p><strong>글쓰기</strong>  </p><p>글을 잘 쓰는 편은 아니지만 꾸준히 작성하려고 노력했다.<br>
+<!-- -->매 미션마다 회고를 작성하니 생각도 정리되고 개선점도 찾을 수 있어서 좋았다.  </p><p>우아한테크코스에는 레벨마다 글쓰기를 진행하는데, 운이 좋게 글쓰기 상을 받았다.<br>
+<!-- -->사실 겉으로 드러내지 않았지만 꼭 받아보고 싶었다.<br>
+<!-- -->글쓰기 조원, 투표해 준 크루들에게 너무 감사하다.  </p><p><strong>코드 리뷰 스터디</strong>  </p><p>누누, 주노, 다즐, 말랑, 박스터, 오잉, 깃짱와 코드 리뷰 스터디를 진행했다.<br>
+<!-- -->과연 도움이 될까 생각했지만 결과적으로는 코드 리뷰를 하면서 성장을 많이 한 것 같다.<br>
+<!-- -->투자한 시간 대비 가성비가 좋은 활동이었다.<br>
+<!-- -->누누가 스터디장인데 과연 꾸준히 이어나가려나?  </p><p><strong>레벨 인터뷰</strong></p><p>인터뷰할 때 많이 떨지 않아서 좋았다.<br>
+<!-- -->남들 앞에서 이야기를 하거나, 면접을 보면 항상 엄청 떨어서 걱정했는데<br>
+<!-- -->기술적인 질문을 받았을 때 떨지 않고 잘 대답할 수 있었다.<br>
+<!-- -->우아한테크코스 생활을 하면서 다른 크루가 질문했을 때, 최대한 이해하기 쉽게 설명하려고 했던 경험이 도움이 된 것 같다.<br>
+<!-- -->이후 레벨 인터뷰를 진행할 때 다음과 같은 부분을 고려하면 더 좋을 것 같다.  </p><ul><li>대답하면서 질문을 계속 생각하며 잊어버리지 말기  </li><li>두괄식 표현</li><li>설명하다가 잘못 설명한 것 같으면 다 끊고 다시 이야기해도 될지 물어보기  </li><li>설명할 수 있을만큼 시간 충분히 가지기</li><li>인터뷰어의 질문 의도를 명확히 이해하지 못했다면 의도 다시 물어보기</li><li>끝맺는 부분 연습하기(자신감 있게)</li><li>기술적인 집착가지기</li><li>기술적인 부분을 꼼꼼히 준비했으면 협업 관련 질문도 준비하기</li></ul><h3 class="anchor anchorWithStickyNavbar_LWe7" id="problem">Problem<a href="#problem" class="hash-link" aria-label="Problem에 대한 직접 링크" title="Problem에 대한 직접 링크">​</a></h3><p><strong>페어프로그래밍</strong>  </p><p>우아한테크코스를 진행하면서 가장 어려운 활동 중 하나라고 생각한다.<br>
+<!-- -->페어는 매번 바뀌고, 미션의 복잡도도 증가하기 때문인 것 같다.<br>
+<!-- -->소통 능력, 시간관리가 부족했고, 만족스럽지 않았다.<br>
+<!-- -->하지만 페어를 진행하고, 회고를 하다 보니 나만의 노하우가 쌓이는 느낌이다.<br>
+<!-- -->레벨 2에서는 부족했던 부분을 개선하여 함께하고 싶은 페어가 되고 싶다.  </p><p><strong>집중하는 시간⏱️ 부족</strong>  </p><p>레벨 1을 진행하면서 집중하는 시간이 많이 부족했다.<br>
+<!-- -->이른 아침과 오후에 개인적으로 집중할 수 있는 공간을 예약해서 온전히 나만의 시간을 가져야겠다.  </p><h3 class="anchor anchorWithStickyNavbar_LWe7" id="try">Try<a href="#try" class="hash-link" aria-label="Try에 대한 직접 링크" title="Try에 대한 직접 링크">​</a></h3><p><strong>허브🌿와의 티타임?</strong>  </p><p>소프트 스킬을 늘릴 방법을 생각하다가 대화를 나누지 못한 다른 크루들과 깜짝 커피챗을 하면 어떨까 생각했다.<br>
+<!-- -->예를 들어 잡담방에 <code>저와 커피챗 하실 분 :)</code> 하면서 올릴 수 있을 것 같다.<br>
+<!-- -->참여하는 사람이 있을지, 안 좋게 보는 게 아닐지 걱정되지만 그래도 재밌을 것 같다.<br>
+<!-- -->저랑 허브티 한잔 하실래요?  </p><p><strong>기술적인 부분</strong>  </p><p>우아한테크코스 생활을 하면서 소프트 스킬에 조금 더 무게를 두다 보니 이론적인 부분이 부족할 수 있다고 생각했다.<br>
+<!-- -->시간의 여유가 될 때 책을 조금씩 읽어야겠다.<br>
+<!-- -->블로그에 기술적인 부분을 많이 정리하지 않았는데, 조금 더 깊게 공부하고 정리하는 시간도 가져야겠다.  </p><h3 class="anchor anchorWithStickyNavbar_LWe7" id="레벨-1을-마무리하며">레벨 1을 마무리하며<a href="#레벨-1을-마무리하며" class="hash-link" aria-label="레벨 1을 마무리하며에 대한 직접 링크" title="레벨 1을 마무리하며에 대한 직접 링크">​</a></h3><p>시간이 빠르게 흘러갔다.<br>
+<!-- -->타인에게 좋은 영향을 주기위해, 방학동안 나를 챙기는 시간을 가져야겠다.<br>
+<!-- -->또한 함께 일하고 싶은 사람을 목표로 앞으로도 꾸준히 의식적 노력을 해야겠다.</p>]]></content>
+        <category label="Woowahan Techcourse" term="Woowahan Techcourse"/>
+        <category label="Retrospective" term="Retrospective"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[체스 미션 회고]]></title>
         <id>https://greeng00se.github.io/12</id>
