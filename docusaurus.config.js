@@ -36,8 +36,13 @@ const config = {
           showReadingTime: true,
           routeBasePath: '/',
           archiveBasePath: '/blog',
+          postsPerPage: 'ALL',
+
           editUrl:
             'https://github.com/greeng00se/greeng00se.github.io/tree/main/',
+        },
+        docs: {
+          sidebarPath: require.resolve('./sidebars.js'),
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -54,8 +59,14 @@ const config = {
         items: [
           {
             to: '/blog', 
-            label: '글', 
+            label: '블로그', 
             position: 'left'
+          },
+          {
+            position: 'left',
+            type: 'doc',
+            label: '문서',
+            docId: 'intro',
           },
           {
             href: 'https://github.com/greeng00se',
