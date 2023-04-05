@@ -68,7 +68,7 @@ sequenceDiagram
     Alice->>Database: BEGIN
     Alice->>Database: UPDATE(Alice to Bob)
     Bob->>Database: SELECT
-    Database->>+Bob: Alice(undo log)
+    Database->>+Bob: Alice(Undo log)
     Alice->>Database: COMMIT
 ```
 
