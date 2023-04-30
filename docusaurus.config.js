@@ -36,7 +36,7 @@ const config = {
           showReadingTime: true,
           routeBasePath: '/',
           archiveBasePath: '/blog',
-          postsPerPage: 'ALL',
+          postsPerPage: 1,
 
           editUrl:
             'https://github.com/greeng00se/greeng00se.github.io/tree/main/',
