@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[6784],{8188:e=>{e.exports=JSON.parse('{"permalink":"/tags/woowachat/page/2","page":2,"postsPerPage":1,"totalPages":2,"totalCount":2,"previousPage":"/tags/woowachat","blogDescription":"Blog","blogTitle":"Blog"}')}}]);
