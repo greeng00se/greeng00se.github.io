@@ -85,7 +85,7 @@ const config = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
-        additionalLanguages: ['java', 'kotlin'],
+        additionalLanguages: ['java', 'kotlin', 'groovy'],
       },
       metadata: [{
         name: 'google-site-verification', 
