@@ -24,8 +24,8 @@
 <!-- -->Client 기준으로 Composite와 Leaf의 차이를 알지 못해도 잘 사용할 수 있도록 해야될 때</p><h3 class="anchor anchorWithStickyNavbar_LWe7" id="패턴-사용시-주의해야할-부분">패턴 사용시 주의해야할 부분<a href="#패턴-사용시-주의해야할-부분" class="hash-link" aria-label="패턴 사용시 주의해야할 부분에 대한 직접 링크" title="패턴 사용시 주의해야할 부분에 대한 직접 링크">​</a></h3><p>패턴은 공통으로 사용 가능한 역할, 책임, 협력의 템플릿이다.<br>
 <!-- -->반복되는 문제를 효율적으로 해결할 수 있지만 패턴에 매몰되서는 안된다.<br>
 <!-- -->패턴을 맹목적으로 사용해서는 안되고, 현재의 요구사항에 따라 패턴을 유동적으로 수정해가면서 적용하는 것이 좋다.<br>
-<!-- -->항상 트레이드오프를 생각하자!</p><h3 class="anchor anchorWithStickyNavbar_LWe7" id="참고-자료">참고 자료<a href="#참고-자료" class="hash-link" aria-label="참고 자료에 대한 직접 링크" title="참고 자료에 대한 직접 링크">​</a></h3><p>컴포지트 패턴, GoF의 디자인 패턴
-컴포지트 패턴, 오브젝트</p>]]></content>
+<!-- -->항상 트레이드오프를 생각하자!</p><h3 class="anchor anchorWithStickyNavbar_LWe7" id="참고-자료">참고 자료<a href="#참고-자료" class="hash-link" aria-label="참고 자료에 대한 직접 링크" title="참고 자료에 대한 직접 링크">​</a></h3><p>컴포지트 패턴, GoF의 디자인 패턴<br>
+<!-- -->디자인 패턴과 프레임워크, 오브젝트</p>]]></content>
         <category label="Pattern" term="Pattern"/>
         <category label="Composite" term="Composite"/>
     </entry>
