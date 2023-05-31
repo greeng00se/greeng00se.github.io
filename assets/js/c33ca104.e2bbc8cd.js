@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[5696],{8872:e=>{e.exports=JSON.parse('{"label":"pacakge","permalink":"/docs/tags/pacakge","allTagsPath":"/docs/tags","count":1,"items":[{"id":"\uc124\uacc4/\\b\ud328\ud0a4\uc9c0","title":"\ud328\ud0a4\uc9c0","description":"\uacc4\uce35 \uae30\ubc18 \ud328\ud0a4\uc9c0","permalink":"/docs/5"}]}')}}]);
