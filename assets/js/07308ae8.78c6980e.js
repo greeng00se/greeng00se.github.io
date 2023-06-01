@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[271],{7785:a=>{a.exports=JSON.parse('{"label":"Woowachat","permalink":"/tags/woowachat","allTagsPath":"/tags","count":2}')}}]);
