@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[9874],{4343:e=>{e.exports=JSON.parse('{"label":"TecoChat","permalink":"/tags/teco-chat","allTagsPath":"/tags","count":3}')}}]);
