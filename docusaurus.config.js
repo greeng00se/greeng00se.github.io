@@ -15,7 +15,7 @@ const config = {
 
   organizationName: 'greeng00se',
   projectName: 'greeng00se.github.io',
-  trailingSlash: true,
+  trailingSlash: false,
   i18n: {
     defaultLocale: "ko",
     locales: ["ko"],
