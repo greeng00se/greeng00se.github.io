@@ -2,11 +2,33 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://greeng00se.github.io/</id>
     <title>GG Blog</title>
-    <updated>2023-06-04T00:00:00.000Z</updated>
+    <updated>2023-06-08T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://greeng00se.github.io/"/>
     <subtitle>GG Blog</subtitle>
     <icon>https://greeng00se.github.io/img/duck.png</icon>
+    <entry>
+        <title type="html"><![CDATA[레벨 2 - 레벨 인터뷰 회고]]></title>
+        <id>https://greeng00se.github.io/31</id>
+        <link href="https://greeng00se.github.io/31"/>
+        <updated>2023-06-08T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[레벨 인터뷰]]></summary>
+        <content type="html"><![CDATA[<h3 class="anchor anchorWithStickyNavbar_LWe7" id="레벨-인터뷰">레벨 인터뷰<a href="#레벨-인터뷰" class="hash-link" aria-label="레벨 인터뷰에 대한 직접 링크" title="레벨 인터뷰에 대한 직접 링크">​</a></h3><p>레벨 1 때는 준비해둔 내용으로 인터뷰를 진행해서 그렇게 특별한 부분이 없었다.<br>
+<!-- -->따라서 레벨 1 레벨 인터뷰 회고는 레벨 1 회고를 작성할 때 끼워넣었다.<br>
+<!-- -->이번에는 범위도 제한되어 있어 어떻게 준비해야 할지 당황했고, 답변에도 부족한 부분이 많았었다.<br>
+<!-- -->기억이 사라지기 전에 큰 문제 없이 답변한 내용을 제외하고, 기억 남는 것 위주로 작성해 보려고 한다.  </p><h3 class="anchor anchorWithStickyNavbar_LWe7" id="api-문서-도구-선택">API 문서 도구 선택<a href="#api-문서-도구-선택" class="hash-link" aria-label="API 문서 도구 선택에 대한 직접 링크" title="API 문서 도구 선택에 대한 직접 링크">​</a></h3><p>큰 문제 없이 답변을 했는데 앞으로도 팀 프로젝트를 하면서 도움 될 것 같은 내용이 있어서 남겨두려고 한다.<br>
+<!-- -->백엔드 팀원이 함께 의사결정을 했고, 미션 기간이 짧은 만큼 팀 차원에서 비교적 학습하기 쉬운 Swagger를 선택했다.<br>
+<!-- -->추가로 들어가는 시간 대비 하이 리턴이라고 생각했다고 답변했다.</p><p>팀 차원의 학습 비용을 언급해서, 다음과 같은 좋은 피드백을 받았다.</p><blockquote><p>특히 팀으로 의사결정하는 과정을 공유해 준 점이 좋았고 기술적 의사결정 과정에서 팀의 학습비용을 고려한 점이 좋았음.<br>
+<!-- -->앞으로도 학습 비용은 주요하게 고려해야 할 사항</p></blockquote><h3 class="anchor anchorWithStickyNavbar_LWe7" id="put과-patch--토큰과-세션">PUT과 PATCH &amp; 토큰과 세션<a href="#put과-patch--토큰과-세션" class="hash-link" aria-label="PUT과 PATCH &amp; 토큰과 세션에 대한 직접 링크" title="PUT과 PATCH &amp; 토큰과 세션에 대한 직접 링크">​</a></h3><p>PUT과 PATCH 차이를 설명하는 부분에서는 PATCH를 사용할 때 페이로드가 적어진다는 내용을 빼먹고 답변을 했다.<br>
+<!-- -->토큰과 세션의 경우 기술을 잘 모르는 사람에게 설명해달라는 제약조건이 추가되었다.  </p><p>해당 내용을 답변하면서 기술적인 깊이가 많이 부족했다는 생각이 든다.<br>
+<!-- -->실제로 레벨 2 때 이론적인 학습 시간이 매우 적었고, 집중력도 많이 부족했다.<br>
+<!-- -->앞으로 어떻게 깊이를 채울지 고민을 할 수 있는 질문들이었다.  </p><p>추가로 기술을 잘 모르는 사람에게 설명하는 가정을 두고 학습을 한다면 큰 도움이 될 거라는 피드백을 받았다.  </p><h3 class="anchor anchorWithStickyNavbar_LWe7" id="그-외-개선할-점">그 외 개선할 점<a href="#그-외-개선할-점" class="hash-link" aria-label="그 외 개선할 점에 대한 직접 링크" title="그 외 개선할 점에 대한 직접 링크">​</a></h3><p>인터뷰할 때 특유의 말버릇을 개선하기<br>
+<!-- -->생각할 시간을 가졌을 때 "다시 말씀드려도 될까요?"라고 말하고 답변을 이어나가기<br>
+<!-- -->기술적으로 깊이가 부족하다고 생각이 많이 들어서 조금 더 깊게 공부하고 정리하기<br>
+<!-- -->이전에 공부했던거 되돌아 보는 시간 가지기</p>]]></content>
+        <category label="Woowahan Techcourse" term="Woowahan Techcourse"/>
+        <category label="Retrospective" term="Retrospective"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[장바구니 주문 미션 회고]]></title>
         <id>https://greeng00se.github.io/30</id>
