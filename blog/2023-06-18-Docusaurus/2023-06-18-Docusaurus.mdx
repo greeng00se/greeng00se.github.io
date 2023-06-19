@@ -1,10 +1,10 @@
 ---
-title: 문서화
+title: Docusaurus
 slug: 33
 tags: [Documentation]
 ---
 
-팀 문서화를 위해 Docusaurus를 사용하는 방법을 정리하려고 한다.  
+팀 블로그 또는 문서화를 위해 Docusaurus를 사용하는 방법을 정리하려고 한다.  
 
 ## 설치
 
@@ -27,9 +27,7 @@ github pages를 이용하려면 [예시](https://github.com/greeng00se/greeng00s
 
 ### 설정 파일 수정
 
-`docusaurus.config` 파일에서 설정을 수정한다.  
-
-```js
+```js title="docusaurus.config"
 module.exports = {
   // ...
   url: 'https://greeng00se.github.io',
@@ -56,9 +54,7 @@ repository -> settings -> pages -> branch에서 생성한 gh-pages로 브랜치�
 
 ### 워크플로 작성
 
-`.github/workflows/deploy.yml` 파일을 만들어 아래와 같이 작성한다. 
-
-```yml
+```yml title=".github/workflows/deploy.yml"
 name: blog
 
 on:
@@ -112,11 +108,10 @@ giscus를 이용하여 댓글 기능을 추가한다.
 yarn run swizzle @docusaurus/theme-classic BlogPostItem -- --wrap
 ```
 
-명령어를 입력하면 `/src/theme/BlogPostItem/index.js` 파일이 생성된다.  
-다음과 같이 변경한다.  
-이 때 setAttribute 부분은 적절하게 자신의 giscus 설정을 이용한다.  
+명령어를 입력하면 `/src/theme/BlogPostItem/index.js` 위치에 파일이 생성된다.  
+파일의 내용을 아래와 같이 수정하고, 이 때 setAttribute 부분은 적절하게 자신의 giscus 설정을 이용한다.  
 
-```js
+```js title="/src/theme/BlogPostItem/index.js"
 import OriginalBlogPostItem from "@theme-original/BlogPostItem";
 import React, { useEffect, useRef } from "react";
 // @ts-expect-error internal code
@@ -193,11 +188,11 @@ export default BlogPostItem;
 
 ## 부가 설정
 
-### 화면 상단 Github Icon 설정
+### 화면 상단 Github Icon
 
-`/src/css/custom.css` 파일 최하단에 아래 css 구문을 추가한다.
+파일 최하단에 아래 css 구문을 추가한다.
 
-```css
+```css title="/src/css/custom.css"
 .header-github-link:hover {
   opacity: 0.6;
 }
@@ -217,9 +212,9 @@ html[data-theme='dark'] .header-github-link:before {
 }
 ```
 
-`docusaurus.config` 파일의 themeconfig -> navbar에 github link를 설정한다.  
+themeconfig -> navbar에 github link를 설정한다.  
 
-```js
+```js title="docusaurus.config"
 navbar: {
   title: 'HELLO',
   items: [
@@ -233,15 +228,66 @@ navbar: {
 },
 ```
 
-### 블로그 글에 author 설정
+### 코드블럭
+
+java나 kotlin의 경우 기본적으로 하이라이팅을 지원해주지 않는다.  
+prism 설정을 아래와 같이 변경해준다.  
+
+```js title="docusaurus.config"
+prism: {
+  theme: lightCodeTheme,
+  darkTheme: darkCodeTheme,
+  additionalLanguages: ['java', 'kotlin'],
+}
+```
+
+### mermaid
+
+mermaid를 사용하려면 `@docusaurus/theme-mermaid` 를 설치해야 한다.
+
+```bash
+yarn add @docusaurus/theme-mermaid
+```
+
+설치 후 아래와 같이 설정을 추가한다.
+
+```js title="docusaurus.config"
+const config = {
+  ...
+  markdown: {
+    mermaid: true,
+  },
+  themes: [
+    '@docusaurus/theme-mermaid'
+  ],
+};
+```
+
+themeConfig에서 mermaid의 테마를 지정할 수 있다.  
+
+```js title="docusaurus.config"
+themeConfig:
+    /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
+    ({
+      ...
+      mermaid: {
+        theme: {
+          light: 'neutral', 
+          dark: 'dark'
+        },
+      },
+    }),
+```
+
+### 블로그 글 author
 
 팀원 별로 문서를 관리한다면 다음과 같이 어떤 팀원이 글을 작성했는지 설정해야 한다.  
 
 ![author](./author.png)
 
-`/blog/authors.yml` 파일을 이용하여 사용자에 대한 기본 설정을 할 수 있다.  
+`authors.yml` 파일을 이용하여 사용자에 대한 기본 설정을 할 수 있다.  
 
-```yml
+```yml title="/blog/authors.yml"
 herb:
   name: 허브
   title: Backend
