@@ -17,13 +17,13 @@ yarn create docusaurus
 ## 배포
 
 [배포 안내 문서](https://docusaurus.io/docs/next/deployment#deploying-to-github-pages)  
-netlify나 vercel같은 서버리스 플랫폼을 추천하고 있고, 간단하고, 빠른 시간안에 배포를 할 수 있다.  
+netlify나 vercel 같은 서버리스 플랫폼을 추천하고 있고, 간단하고, 빠른 시간 안에 배포를 할 수 있다.  
 이 글에서는 github pages를 이용해서 배포하는 방법을 설명한다.
 
 ### 레포지토리 생성
 
 github pages를 이용하려면 [예시](https://github.com/greeng00se/greeng00se.github.io)와 같이 `username.github.io` 형태의 레포지토리를 생성해야 한다.  
-이 때 organization을 사용하는 경우 `organization.github.io` 형태의 레포지토리를 생성해서 사용한다. 
+이때 organization을 사용하는 경우 `organization.github.io` 형태의 레포지토리를 생성해서 사용한다. 
 
 ### 설정 파일 수정
 
@@ -109,7 +109,7 @@ yarn run swizzle @docusaurus/theme-classic BlogPostItem -- --wrap
 ```
 
 명령어를 입력하면 `/src/theme/BlogPostItem/index.js` 위치에 파일이 생성된다.  
-파일의 내용을 아래와 같이 수정하고, 이 때 setAttribute 부분은 적절하게 자신의 giscus 설정을 이용한다.  
+파일의 내용을 아래와 같이 수정하고, 이때 setAttribute 부분은 적절하게 자신의 giscus 설정을 이용한다.  
 
 ```js title="/src/theme/BlogPostItem/index.js"
 import OriginalBlogPostItem from "@theme-original/BlogPostItem";
@@ -179,7 +179,7 @@ export default BlogPostItem;
 ## 알고리아 설정 및 직접 관리하기
 
 알고리아를 사용하면 검색 기능을 추가할 수 있다.  
-유료 플랜이나 netlify를 사용하는 경우 크롤러를 따로 제공해주는 것 같다.  
+유료 플랜이나 netlify를 사용하는 경우 크롤러를 따로 제공해 주는 것 같다.  
 
 무료 플랜은 직접 인덱스를 수집하는 방법과, [docsearch](https://docsearch.algolia.com/)를 이용하는 방법이 있다.  
 docsearch에 등록한다면 일주일에 한 번씩 크롤링이 진행된다.  
@@ -279,7 +279,7 @@ jq가 설치되어 있지 않으면 mac 기준 brew를 이용해서 설치할 �
 brew install jq
 ```
 
-다음 명령어를 이용해 .env와 config.json을 이용하여 크롤링을 한다.  
+다음 명령어를 이용하여 .env와 config.json을 이용하여 크롤링을 한다.  
 
 ```bash
 docker run -it --env-file=.env -e "CONFIG=$(cat ./config.json | jq -r tostring)" algolia/docsearch-scraper
@@ -347,8 +347,8 @@ navbar: {
 
 ### 코드블럭
 
-java나 kotlin의 경우 기본적으로 하이라이팅을 지원해주지 않는다.  
-prism 설정을 아래와 같이 변경해준다.  
+java나 kotlin의 경우 기본적으로 하이라이팅을 지원해 주지 않는다.  
+prism 설정을 아래와 같이 변경해 준다.  
 
 ```js title="docusaurus.config"
 prism: {
@@ -418,7 +418,7 @@ mallang:
   image_url: https://github.com/shin-mallang.png
 ```
 
-블로그 글을 작성할 때 다음과 같이 authors에 넣어주기만 하면된다.  
+블로그 글을 작성할 때 다음과 같이 authors에 넣어주기만 하면 된다.  
 
 ```mdx
 ---
