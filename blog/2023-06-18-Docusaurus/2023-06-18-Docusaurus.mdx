@@ -54,6 +54,9 @@ repository -> settings -> pages -> branch에서 생성한 gh-pages로 브랜치�
 
 ### 워크플로 작성
 
+Docusaurus 2.0 기준 Node.js 16.14 이상의 버전을 사용해야 합니다.  
+배포시에는 Repository secrets으로 설정한 DEPLOY_TOKEN 을 이용합니다.  
+
 ```yml title=".github/workflows/deploy.yml"
 name: blog
 
