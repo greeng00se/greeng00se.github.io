@@ -1,0 +1,86 @@
+---
+title: 기본 키 매핑
+tags: [JPA]
+---
+
+### 기본 키 매핑
+
+기본 키 매핑 전략에는 직접 할당하는 방법이 있고 자동 생성해서 사용하는 방법이 있다.  
+자동 생성을 선택한다면 애플리케이션에서 키에 대한 부분을 직접 할당하지 않고, 데이터베이스가 생성해주는 값을 사용할 수 있다.  
+
+### 직접 할당
+
+기본 키를 직접 할당하는 경우에 `@Id`만 사용한다.  
+자동 할당하는 경우 `@Id`에 추가적으로 `@GeneratedValue`를 사용해야 한다.  
+
+### IDENTITY
+
+데이터베이스가 생성한 키를 사용하는 전략  
+MySQL, PostgreSQL과 같은 DB에서 주로 사용한다.  
+Hibernate는 JDBC3에 추가된 `Statement.getGeneratedKeys()`를 사용하여 생성과 동시에 키 값을 얻어 올 수 있다.  
+
+```java
+@Getter
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@Entity
+public class Member {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+}
+```
+
+### SEQUENCE
+
+시퀀스는 유일한 값을 순서대로 생성하는 데이터베이스 오브젝트다.  
+IDENTITY의 경우 데이터베이스에 저장한 후 식별자를 조회해서 엔티티의 식별자에 할당한다.  
+SEQUENCE의 경우 `call next value for member_seq`와 같이 시퀀스를 사용해서 식별자를 
+
+```java
+@Getter
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@SequenceGenerator(
+        name = "MEMBER_SEQ_GENERATOR",
+        sequenceName = "MEMBER_SEQ",
+        initialValue = 1,
+        allocationSize = 1
+)
+@Entity
+public class Member {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "MEMBER_SEQ_GENERATOR")
+    private Long id;
+}
+```
+
+### TABLE
+
+키 생성용 테이블을 별도로 두어 시퀀스와 유사하게 식별자 키를 얻는 전략이다.  
+조회와 업데이트를 해야한다는 단점이 있다.  
+
+```java
+@Getter
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@TableGenerator(
+        name = "MEMBER_SEQ_GENERATOR",
+        table = "MEMBER_SEQUENCES",
+        pkColumnValue = "MEMBER_SEQ",
+        allocationSize = 1
+)
+@Entity
+public class Member {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.TABLE, generator = "MEMBER_SEQ_GENERATOR")
+    private Long id;
+}
+```
+
+### AUTO
+
+데이터베이스에 따라 위에 언급된 전략 중 하나를 자동으로 선택한다.  
+MySQL의 경우 IDENTITY Oracle의 경우 SEQUENCE를 선택한다.  
+
+- 자바 ORM 표준 JPA 프로그래밍, 김영한 p.131 ~ p.144
