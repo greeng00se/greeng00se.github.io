@@ -1,0 +1,36 @@
+---
+title: 구조 및 명령어
+tags: [nginx]
+---
+
+### 폴더 및 파일
+
+`/etc/nginx/`
+
+기본 설정이 저장된 루트 디렉터리
+
+`/etc/nginx/nginx.conf`
+
+기본 설정 파일로 모든 설정에 대한 진입점  
+디렉터리에 위치한 모든 설정 파일을 포함하는 최상위 Http 블록을 포함한다.  
+
+```bash title="nginx에 포함된 설정 파일 포함 include 구문"
+http {
+        ...
+        include /etc/nginx/conf.d/*.conf;
+        include /etc/nginx/sites-enabled/*;
+}
+```
+
+`/etc/nginx/conf.d/`
+
+기본 HTTP 서버 설정 파일에 대한 디렉터리  
+`.conf` 로 끝나는 경우 위의 include 설정에 의해 최상위 http 블록에 포함된다.  
+conf.d 디렉터리 대신 site-enabled 디렉터리가 있고, symlink를 통해 설정 파일을 연결하는 방법은 더 이상 사용하지 않는다.  
+
+:::note NIGNX 설정
+nginx 설정의 경우 include 구문을 활용해 구조화하여 설정 파일을 간결하게 유지하는 것이 좋다.
+:::
+
+- NGINX 쿡북, 데릭 디용기 p.22 ~ p.23
+
