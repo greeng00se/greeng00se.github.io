@@ -26,11 +26,41 @@ http {
 
 기본 HTTP 서버 설정 파일에 대한 디렉터리  
 `.conf` 로 끝나는 경우 위의 include 설정에 의해 최상위 http 블록에 포함된다.  
-conf.d 디렉터리 대신 site-enabled 디렉터리가 있고, symlink를 통해 설정 파일을 연결하는 방법은 더 이상 사용하지 않는다.  
+conf.d 디렉터리 대신 site-enabled 디렉터리와 symlink를 통해 설정 파일을 연결하는 방법은 더 이상 사용하지 않는다.  
 
 :::note NIGNX 설정
 nginx 설정의 경우 include 구문을 활용해 구조화하여 설정 파일을 간결하게 유지하는 것이 좋다.
 :::
 
+`/var/log/nginx/`
+
+엔진엑스 로그가 저장되는 디렉터리로 access 로그와 error 로그를 확인할 수 있다.  
+로그 형식의 경우 설정 파일의 log_format 구문을 이용해서 변경할 수 있다.  
+
+### 명령어
+
+`nginx -t`
+
+nginx 설정이 정상인지 확인한다.  
+
+`nginx -T`  
+
+nginx 설정 확인의 결과를 조금 더 자세하게 출력해준다.  
+
+`nginx -s <SIGNAL>`
+
+여기서 SIGNAL은 다음 중 하나를 선택할 수 있다.
+
+- quit: 정상적으로 종료(SIGQUIT)
+- reload: 설정 파일 리로드(SIGHUP)
+- reopen: 로그 파일을 다시 열도록 요청(SIGUSR1)
+- stop: 종료 요청(SIGTERM)
+
+여기서 SIGQUIT & SIGTREM 모두 graceful shutdown을 수행한다.
+
+### 참고 자료
+
 - NGINX 쿡북, 데릭 디용기 p.22 ~ p.23
+- https://docs.nginx.com/
+- https://docs.nginx.com/nginx/admin-guide/monitoring/logging/
 
