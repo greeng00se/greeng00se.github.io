@@ -43,10 +43,16 @@ const config = {
         },
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          showLastUpdateTime: true
+          showLastUpdateTime: true,
+          editUrl:
+            'https://github.com/greeng00se/greeng00se.github.io/tree/main/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
+        },
+        gtag: {
+          trackingID: 'G-17TREGCW4H',
+          anonymizeIP: true,
         },
       }),
     ],
