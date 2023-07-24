@@ -81,6 +81,36 @@ public class Member {
 ### AUTO
 
 데이터베이스에 따라 위에 언급된 전략 중 하나를 자동으로 선택한다.  
-MySQL의 경우 IDENTITY Oracle의 경우 SEQUENCE를 선택한다.  
+MySQL의 경우 IDENTITY Oracle의 경우 SEQUENCE를 선택한다. 
 
-- 자바 ORM 표준 JPA 프로그래밍, 김영한 p.131 ~ p.144
+### UUID
+
+JPA 3.1.0 UUID 생성 전략이 추가되었다.  
+Hibernate 6.2부터 JPA 3.1.0을 지원하기 때문에 스프링 부트 3.1 이상인 경우 사용할 수 있다.  
+
+```java
+@Getter
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@Entity
+public class Member {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.UUID)
+    @UuidGenerator(style = Style.RANDOM)
+    private Long id;
+}
+```
+
+UuidGenerator를 이용하여 UUID 생성 방식도 설정할 수 있다.  
+생성 방식은 3가지가 있다.
+
+- RANDOM - 난수 기반 UUID 생성(uuid v4)
+- TIME – 시간 기반 UUID 생성(uuid v1)
+- AUTO – 기본 옵션, RANDOM과 동일
+
+UUID의 경우 많은 양의 저장 공간을 필요로 하고, 성능 문제가 발생할 수 있기에 UUID를 사용해야 하는 경우 TSID를 고려할 수 있을 것 같다.  
+
+### 참고 자료
+
+- 자바 ORM 표준 JPA 프로그래밍, 김영한 p.131 ~ p.144  
+- [Generate UUIDs as Primary Keys With Hibernate](https://www.baeldung.com/java-hibernate-uuid-primary-key)
