@@ -12,7 +12,7 @@ tags: [Java, Spring Boot, Spring]
 ## 자바 변경 사항
 
 우아한테크코스 레벨 2까지는 자바 11을 사용했었다.  
-자바 11도 자바 8에 비해 엄청 많은 변경사항이 있었지만 자바 11부터 자바 17까지의 변경사항도 꽤 되기에 정식 릴리즈 기준으로 정리해보려고 한다.
+따라서 자바 11부터 자바 17까지의 변경사항을 정식 릴리즈 기준으로 정리해보려고 한다.
 
 ### Switch Expressions(Java 14)
 
@@ -75,7 +75,7 @@ java.lang.NullPointerException: Cannot invoke "String.chars()" because "name" is
 
 ### Record(Java 16)
 
-Lombok의 `@Data` kotlin의 data 클래스와 유사한 기능을 제공한다.  
+Lombok의 `@Data`, kotlin의 data 클래스와 유사한 기능을 제공한다.  
 Record를 선언하는 경우 접근자, 생성자, equals & hashcode, toString이 제공된다.  
 데이터 전송 용도로 적합해 보인다.  
 
@@ -86,7 +86,7 @@ public record PostDto(String title, String content) {
 
 ### 추가적인 변경사항
 
-이외에도 `toList()`, 인스턴스의 타입을 간편하게 체크하는 Pattern Matching Instanceof, Sealed class 등이 추가되었다.  
+이외에도 stream의 toList, 인스턴스의 타입을 간편하게 체크하는 Pattern Matching Instanceof, Sealed class 등이 추가되었다.  
 
 ## 스프링, 스프링 부트 변경 사항
 
@@ -104,22 +104,22 @@ Jakarta EE 9가 적용되면서 네임스페이스도 전반적으로 javax -> j
 ### PathPatternParser - trailing slash 허용하지 않음
 
 6.0 이전의 경우 기본 설정 기준으로 `@GetMapping("/hello")`와 `@GetMapping("/hello/")`가 동일했다.  
-이전에 `setUseTrailingSlashMatch(false);`으로 설정하는 방법이 deprecated 되었고 PathPatternParser가 기본으로 사용된다.  
+6.0 이후의 PathPatternParser가 기본으로 사용되고, `/hello`와 `/hello/`는 서로 다른 URL로 매칭된다.  
 
 > PathPatternParser used by default (with the ability to opt into PathMatcher). 
 
 ### HTTP interface client
 
 자바 인터페이스와 어노테이션을 이용하여 HTTP 요청을 위한 서비스를 정의할 수 있는 방법이 추가되었다.  
-자세한 내용은 추후에 [토비님의 강의](https://www.youtube.com/watch?v=Kb37Q5GCyZs)를 참고해야 겠다.
+자세한 내용은 [토비님의 강의](https://www.youtube.com/watch?v=Kb37Q5GCyZs)를 참고하면 좋을 것 같다.
 
 ### 스프링 부트 최소 요구사항
 
-Gradle 7.3, Java 17, Kotlin 1.6, Jakarta EE 9, Spring Framework 6
+Gradle 7.3, Java 17, Kotlin 1.6, Jakarta EE 9, Spring Framework 6  
+이외에도 서드파티들의 최신 릴리즈 버전을 사용함으로, 문제가 발생하는 경우 해당 버전에 맞는 릴리즈 노트를 참고할 수 있을 것 같다.  
 
 ## 참고 자료
 
-[Java 11 이상으로 전환해야하는 이유](https://learn.microsoft.com/ko-kr/java/openjdk/reasons-to-move-to-java-11)  
 [어느 월급쟁이개발자 의 스프링 부트 따라잡기](https://www.youtube.com/watch?v=1WT6oxchM9M)  
 [자바 9-16 주요 특징 복습하기](https://www.youtube.com/watch?v=7SlDdzVk6GE)  
 [Java EE에서 Jakarta EE로의 전환](https://www.samsungsds.com/kr/insights/java_jakarta.html)  
