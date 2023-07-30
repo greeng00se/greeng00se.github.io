@@ -1,6 +1,6 @@
 ---
 title: 경로 이미지 생성하기 - 파이썬
-slug: 39
+slug: 38
 tags: [Image, Python]
 ---
 
@@ -25,6 +25,9 @@ graph LR
 
 ### 요구사항
 
+![./route.png](./route.png)
+
+우측 상단의 경로 이미지를 생성하려고 한다.  
 경로 이미지 생성에 대한 요구사항은 다음과 같다.
 
 - 위도, 경도로 이루어진 배열을 입력받는다. 
@@ -90,6 +93,10 @@ point = [
 
 draw(point)
 ```
+
+생성 결과는 아래와 같다. (예시를 위해 검은색으로 출력)
+
+![./routeImage.png](./routeImage.png)
 
 ### AWS Lambda
 
