@@ -1,0 +1,60 @@
+---
+title: Mockito 이용해서 static 메서드 모킹하기
+slug: 37
+tags: [Mockito, static]
+---
+
+### 개요
+
+정적 팩터리 메서드를 모킹한다는 것은 객체지향적인 관점에서 볼 때 안티패턴이다.  
+하지만 특수한 경우에는 정적 메서드를 모킹하는 것이 필요할 수 있다고 생각한다.  
+
+예를 들어 레거시 코드를 테스트 한다던지, IO 관련한 부분을 테스트 할 때 정말 필요한 부분에만 적용할 수 있을 것이다.  
+
+프로젝트를 진행하며 ImageIo.write 메서드가 호출되는 지 검증이 필요했다.  
+해당 static 메서드를 호출하는 부분을 따로 RouteImageUploader 클래스로 최대한 분리했다.  
+
+```java
+public void upload(BufferedImage bufferedImage) {
+    File file = new File(파일경로);
+    try {
+        ImageIO.write(bufferedImage, ROUTE_IMAGE_FORMAT, file);
+    } catch (IOException e) {
+        throw new DrawException(IMAGE_SAVE_FAIL);
+    }
+}
+```
+
+### Mocking static methods
+
+Mockito 3.4.0 이후에는 static method를 모킹할 수 있는 Mockito.mockStatic 메서드를 지원한다.  
+mockStatic을 사용하면 `MockedStatic<T>`이 반환되는데 사용 후 꼭 close를 해줘야 한다.  
+
+JUnit의 @BeforeAll로 설정하고 @AfterAll 메서드로 종료하는 방법도 있지만 `MockedStatic<T>`의 상위 인터페이스인 ScopedMock이 AutoCloseable을 구현하고 있기에 try-with-resources를 사용하는 방법이 더욱 좋은 것 같다.  
+
+```java
+// given
+BufferedImage bufferedImage = new BufferedImage(800, 800, BufferedImage.TYPE_INT_ARGB);
+RouteImageUploader routeImageUploader = new RouteImageUploader();
+
+// expect
+try (MockedStatic<ImageIO> imageIO = Mockito.mockStatic(ImageIO.class)) {
+    routeImageUploader.upload(bufferedImage);
+    imageIO.verify(
+            () -> ImageIO.write(any(BufferedImage.class), any(String.class), any(File.class)),
+            times(1)
+    );
+}
+```
+
+### 마치며
+
+정적 메서드를 모킹하는 것은 안티패턴이기 때문에 최대한 적절한 추상화를 이용해 테스트 하기 좋은 코드를 만드는 연습을 하자.  
+하지만 추상화를 하면 할 수록 코드의 복잡도는 증가한다.  
+항상 상황을 고려하고 간결함을 포기할 만큼 중요한 부분인지 적절한 트레이드오프를 고려하자.  
+
+### 참고 자료
+
+[Mocking static methods](https://javadoc.io/doc/org.mockito/mockito-core/latest/org/mockito/Mockito.html#static_mocks)  
+[Mockito mock static methods](https://www.baeldung.com/mockito-mock-static-methods)  
+[Enable mocking static methods in Mockito](https://github.com/mockito/mockito/issues/1013)  
