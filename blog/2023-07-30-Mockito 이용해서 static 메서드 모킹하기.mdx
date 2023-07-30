@@ -13,6 +13,7 @@ tags: [Mockito, static]
 
 프로젝트를 진행하며 ImageIo.write 메서드가 호출되는 지 검증이 필요했다.  
 해당 static 메서드를 호출하는 부분을 따로 RouteImageUploader 클래스로 최대한 분리했다.  
+이미지 저장 기능 자체가 외부로 나가는 상호작용이고, 호출 횟수를 검사하는데는 mock을 사용하는게 적절하다고 판단했다.  
 
 ```java
 public void upload(BufferedImage bufferedImage) {
