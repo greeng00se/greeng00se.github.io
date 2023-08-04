@@ -3,6 +3,54 @@ title: 정적 컨텐츠 제공
 tags: [nginx]
 ---
 
+### root
+
+클라이언트에게 파일을 제공할 때 사용되는 경로를 지정하는 데 사용한다.  
+root의 경우 locaiton으로 넘어온 경로를 root 경로 뒤에 추가한다.  
+
+```bash title=root
+# localhost/images/1.png 호출 /var/www/images/images/1.png 검색
+location /images/ {
+    root /var/www/images;
+}
+```
+
+### alias
+
+location으로 매칭된 부분을 제거한다.
+
+```bash title=alias
+# localhost/images/1.png 호출 /var/www/images/1.png 검색
+location /images/ {
+    alias /var/www/images;
+}
+```
+
+### try_files
+
+try_files 디렉티브를 이용해서 파일이 존재하지 않으면 적절한 값을 반환할 수 있다.  
+설정하지 않으면 기본으로 404를 반환한다.  
+
+```bash
+location /images/ {
+    alias /var/www/images;
+    try_files $uri $uri/ =404;
+}
+```
+
+다음과 같이 proxy 설정으로도 구성할 수도 있다.
+
+```bash
+location /images/ {
+    root /root;
+    try_files $uri $uri/ default-image;
+}
+
+location default-image {
+    proxy_pass http://localhost/images/default_image.jpg;
+}
+```
+
 ### 참고 자료
 
 [Serving Static Content](https://docs.nginx.com/nginx/admin-guide/web-server/serving-static-content/)
