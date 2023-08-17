@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[4212],{44929:e=>{e.exports=JSON.parse('{"permalink":"/tags/lock/page/2","page":2,"postsPerPage":1,"totalPages":2,"totalCount":2,"previousPage":"/tags/lock","blogDescription":"Blog","blogTitle":"Blog"}')}}]);

@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[1677],{3335:e=>{e.exports=JSON.parse('{"permalink":"/tags/teco-chat/page/2","page":2,"postsPerPage":1,"totalPages":3,"totalCount":3,"previousPage":"/tags/teco-chat","nextPage":"/tags/teco-chat/page/3","blogDescription":"Blog","blogTitle":"Blog"}')}}]);

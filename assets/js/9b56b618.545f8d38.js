@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[9538],{7e3:e=>{e.exports=JSON.parse('{"permalink":"/tags/awt","page":1,"postsPerPage":1,"totalPages":2,"totalCount":2,"nextPage":"/tags/awt/page/2","blogDescription":"Blog","blogTitle":"Blog"}')}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[2793],{40526:e=>{e.exports=JSON.parse('{"label":"WebSocket","permalink":"/tags/web-socket","allTagsPath":"/tags","count":1}')}}]);
