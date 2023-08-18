@@ -110,10 +110,20 @@ sudo touch /usr/share/collectd/types.db
 
 ### 지표 확인
 
-CloudWatch Metrics에 가보면 CWAgent라는 사용자 지정 네임스페이스가 추가된 것을 볼 수 있다.  
-설정 파일에 네임스페이스를 추가하는 방법도 있다.  
+CloudWatch Metrics에 가보면 CWAgent라는 네임스페이스가 추가된 것을 볼 수 있다.  
 
 ![./cloudwatch6.png](./cloudwatch6.png)
+
+다음과 같이 설정 파일에 네임스페이스를 추가하여 지표에 대한 네임스페이스를 변경할 수 있다.    
+
+```json
+{
+  "metrics": {
+    "namespace": "2023-hello-world",
+    ......
+   },
+} 
+```
 
 ### 로그
 
@@ -127,4 +137,5 @@ CloudWatch → 로그 그룹으로 가면 Wizard로 추가한 로그를 확인�
 [Amazon CloudWatch 요금](https://aws.amazon.com/ko/cloudwatch/pricing/)  
 [Linux 인스턴스 지표](https://docs.aws.amazon.com/ko_kr/AWSEC2/latest/UserGuide/viewing_metrics_with_cloudwatch.html)  
 [서버에 CloudWatch 에이전트 설치 및 실행](https://docs.aws.amazon.com/ko_kr/AmazonCloudWatch/latest/monitoring/install-CloudWatch-Agent-commandline-fleet.html)  
-[CloudWatch Agent를 Parameter Store에서 관리해 보기](https://dev.classmethod.jp/articles/manage-the-cloudwatch-agent-from-the-parameter-store/)
+[CloudWatch Agent를 Parameter Store에서 관리해 보기](https://dev.classmethod.jp/articles/manage-the-cloudwatch-agent-from-the-parameter-store/)  
+[CloudWatch에이전트 구성 파일](https://docs.aws.amazon.com/ko_kr/AmazonCloudWatch/latest/monitoring/CloudWatch-Agent-Configuration-File-Details.html)
