@@ -1,5 +1,6 @@
 ---
 title: Swap 메모리 설정
+slug: /linux/swap
 last_update:
   date: 2023/07/20
   author: 허브
