@@ -4,14 +4,22 @@
         <title>GG Blog</title>
         <link>https://greeng00se.github.io/</link>
         <description>GG Blog</description>
-        <lastBuildDate>Sat, 19 Aug 2023 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 22 Aug 2023 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>ko</language>
         <item>
+            <title><![CDATA[DB Replication]]></title>
+            <link>https://greeng00se.github.io/db-replication</link>
+            <guid>https://greeng00se.github.io/db-replication</guid>
+            <pubDate>Tue, 22 Aug 2023 00:00:00 GMT</pubDate>
+            <category>mysql</category>
+            <category>replication</category>
+        </item>
+        <item>
             <title><![CDATA[우아한테크코스 레벨 3 회고]]></title>
-            <link>https://greeng00se.github.io/42</link>
-            <guid>https://greeng00se.github.io/42</guid>
+            <link>https://greeng00se.github.io/woowacourse-level3-retrospective</link>
+            <guid>https://greeng00se.github.io/woowacourse-level3-retrospective</guid>
             <pubDate>Sat, 19 Aug 2023 00:00:00 GMT</pubDate>
             <description><![CDATA[회고]]></description>
             <content:encoded><![CDATA[<h3 class="anchor anchorWithStickyNavbar_LWe7" id="회고">회고<a href="#회고" class="hash-link" aria-label="회고에 대한 직접 링크" title="회고에 대한 직접 링크">​</a></h3><p>지난 8주는 레벨 1, 2 때보다 5배 정도 빠르게 지나간 것 같은 느낌이 들었다.<br>
@@ -34,8 +42,8 @@
         </item>
         <item>
             <title><![CDATA[CloudWatch를 이용한 로깅, 메트릭 모니터링 환경 구성]]></title>
-            <link>https://greeng00se.github.io/41</link>
-            <guid>https://greeng00se.github.io/41</guid>
+            <link>https://greeng00se.github.io/cloudwatch</link>
+            <guid>https://greeng00se.github.io/cloudwatch</guid>
             <pubDate>Thu, 17 Aug 2023 00:00:00 GMT</pubDate>
             <description><![CDATA[CloudWatch]]></description>
             <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="cloudwatch">CloudWatch<a href="#cloudwatch" class="hash-link" aria-label="CloudWatch에 대한 직접 링크" title="CloudWatch에 대한 직접 링크">​</a></h2><p>AWS 리소스와 애플리케이션의 지표와 로그에 대한 모니터링을 제공하는 서비스다.<br>
@@ -64,12 +72,12 @@
         </item>
         <item>
             <title><![CDATA[경로 이미지 생성하기 - 비동기 처리]]></title>
-            <link>https://greeng00se.github.io/40</link>
-            <guid>https://greeng00se.github.io/40</guid>
+            <link>https://greeng00se.github.io/route-image-async-with-event</link>
+            <guid>https://greeng00se.github.io/route-image-async-with-event</guid>
             <pubDate>Sun, 13 Aug 2023 00:00:00 GMT</pubDate>
             <description><![CDATA[이전 글]]></description>
-            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="이전-글">이전 글<a href="#이전-글" class="hash-link" aria-label="이전 글에 대한 직접 링크" title="이전 글에 대한 직접 링크">​</a></h2><p><a href="/36">경로 이미지 생성하기 - 기술 선택</a><br>
-<a href="/39">경로 이미지 생성하기 - 구현</a></p><h2 class="anchor anchorWithStickyNavbar_LWe7" id="개요">개요<a href="#개요" class="hash-link" aria-label="개요에 대한 직접 링크" title="개요에 대한 직접 링크">​</a></h2><p>현재 여행을 마치는 경우, 감상을 생성하는 경우 이미지 생성 요청이 이루어진다.<br>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="이전-글">이전 글<a href="#이전-글" class="hash-link" aria-label="이전 글에 대한 직접 링크" title="이전 글에 대한 직접 링크">​</a></h2><p><a href="/route-image-intro">경로 이미지 생성하기 - 기술 선택</a><br>
+<a href="/route-image-implementation">경로 이미지 생성하기 - 구현</a></p><h2 class="anchor anchorWithStickyNavbar_LWe7" id="개요">개요<a href="#개요" class="hash-link" aria-label="개요에 대한 직접 링크" title="개요에 대한 직접 링크">​</a></h2><p>현재 여행을 마치는 경우, 감상을 생성하는 경우 이미지 생성 요청이 이루어진다.<br>
 <!-- -->경로 이미지 생성의 경우 위치 정보의 개수에 정비례하여 생성 시간이 증가한다.<br>
 <!-- -->따라서 비동기로 이미지 생성 요청을 처리하여 사용자의 경험을 개선시킬 수 있다고 생각했다.  </p><h3 class="anchor anchorWithStickyNavbar_LWe7" id="주기능의-응답속도-개선">주기능의 응답속도 개선<a href="#주기능의-응답속도-개선" class="hash-link" aria-label="주기능의 응답속도 개선에 대한 직접 링크" title="주기능의 응답속도 개선에 대한 직접 링크">​</a></h3><p>여행 종료와 감상 생성이 주기능이고, 이미지 생성 기능은 부기능이다.<br>
 <!-- -->하지만 현재 여행 종료와 감상 생성의 응답 속도가 경로 이미지 생성 시간에 영향을 받고 있다.<br>
@@ -100,12 +108,12 @@
         </item>
         <item>
             <title><![CDATA[경로 이미지 생성하기 - 구현]]></title>
-            <link>https://greeng00se.github.io/39</link>
-            <guid>https://greeng00se.github.io/39</guid>
+            <link>https://greeng00se.github.io/route-image-implementation</link>
+            <guid>https://greeng00se.github.io/route-image-implementation</guid>
             <pubDate>Wed, 02 Aug 2023 00:00:00 GMT</pubDate>
             <description><![CDATA[개요]]></description>
             <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="개요">개요<a href="#개요" class="hash-link" aria-label="개요에 대한 직접 링크" title="개요에 대한 직접 링크">​</a></h2><p>위와 같이 여행에 대한 경로를 보여주기 위해 경로 이미지를 생성하는 기능을 추가했다.<br>
-<!-- -->경로 이미지에 대한 요구사항 및 기술 선택에 대한 내용은 <a href="/36">링크</a>에 있다.</p><h3 class="anchor anchorWithStickyNavbar_LWe7" id="구현-결과">구현 결과<a href="#구현-결과" class="hash-link" aria-label="구현 결과에 대한 직접 링크" title="구현 결과에 대한 직접 링크">​</a></h3><p><img loading="lazy" alt="./result.png" src="/assets/images/result-c2887223d62510a96c9c8f733bf5edf6.png" width="1840" height="714" class="img_ev3q"></p><p>예시 데이터는 다음과 같다.<br>
+<!-- -->경로 이미지에 대한 요구사항 및 기술 선택에 대한 내용은 <a href="/route-image-intro">링크</a>에 있다.</p><h3 class="anchor anchorWithStickyNavbar_LWe7" id="구현-결과">구현 결과<a href="#구현-결과" class="hash-link" aria-label="구현 결과에 대한 직접 링크" title="구현 결과에 대한 직접 링크">​</a></h3><p><img loading="lazy" alt="./result.png" src="/assets/images/result-c2887223d62510a96c9c8f733bf5edf6.png" width="1840" height="714" class="img_ev3q"></p><p>예시 데이터는 다음과 같다.<br>
 <strong>서울역(점)</strong> → 신사역 → 노량진역 → 홍대입구역 → 종로3가역 → 옥수역 → <strong>구로역(점)</strong> → 신림역 → 발산역</p><div class="language-java codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockTitle_Ktv7">예시 데이터</div><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-java codeBlock_bY9V thin-scrollbar"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token class-name">List</span><span class="token generics punctuation" style="color:rgb(248, 248, 242)">&lt;</span><span class="token generics class-name">Double</span><span class="token generics punctuation" style="color:rgb(248, 248, 242)">&gt;</span><span class="token plain"> x </span><span class="token operator">=</span><span class="token plain"> </span><span class="token class-name">List</span><span class="token punctuation" style="color:rgb(248, 248, 242)">.</span><span class="token function" style="color:rgb(80, 250, 123)">of</span><span class="token punctuation" style="color:rgb(248, 248, 242)">(</span><span class="token plain"></span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">        </span><span class="token number">126.97094933811682</span><span class="token punctuation" style="color:rgb(248, 248, 242)">,</span><span class="token plain"> </span><span class="token number">127.02154822802501</span><span class="token punctuation" style="color:rgb(248, 248, 242)">,</span><span class="token plain"> </span><span class="token number">126.94218991864345</span><span class="token punctuation" style="color:rgb(248, 248, 242)">,</span><span class="token plain"> </span><span class="token number">126.92402556641424</span><span class="token punctuation" style="color:rgb(248, 248, 242)">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">        </span><span class="token number">126.99265358592287</span><span class="token punctuation" style="color:rgb(248, 248, 242)">,</span><span class="token plain"> </span><span class="token number">127.01779856076462</span><span class="token punctuation" style="color:rgb(248, 248, 242)">,</span><span class="token plain"> </span><span class="token number">126.88474839801178</span><span class="token punctuation" style="color:rgb(248, 248, 242)">,</span><span class="token plain"> </span><span class="token number">126.92900751277035</span><span class="token punctuation" style="color:rgb(248, 248, 242)">,</span><span class="token plain"> </span><span class="token number">126.83930056313639</span><span class="token plain"></span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain"></span><span class="token punctuation" style="color:rgb(248, 248, 242)">)</span><span class="token punctuation" style="color:rgb(248, 248, 242)">;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain"></span><span class="token class-name">List</span><span class="token generics punctuation" style="color:rgb(248, 248, 242)">&lt;</span><span class="token generics class-name">Double</span><span class="token generics punctuation" style="color:rgb(248, 248, 242)">&gt;</span><span class="token plain"> y </span><span class="token operator">=</span><span class="token plain"> </span><span class="token class-name">List</span><span class="token punctuation" style="color:rgb(248, 248, 242)">.</span><span class="token function" style="color:rgb(80, 250, 123)">of</span><span class="token punctuation" style="color:rgb(248, 248, 242)">(</span><span class="token plain"></span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">        </span><span class="token number">37.55302829553499</span><span class="token punctuation" style="color:rgb(248, 248, 242)">,</span><span class="token plain"> </span><span class="token number">37.51619698970427</span><span class="token punctuation" style="color:rgb(248, 248, 242)">,</span><span class="token plain"> </span><span class="token number">37.51294119442773</span><span class="token punctuation" style="color:rgb(248, 248, 242)">,</span><span class="token plain"> </span><span class="token number">37.5565933969331</span><span class="token punctuation" style="color:rgb(248, 248, 242)">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">        </span><span class="token number">37.57034879708931</span><span class="token punctuation" style="color:rgb(248, 248, 242)">,</span><span class="token plain"> </span><span class="token number">37.54027238225762</span><span class="token punctuation" style="color:rgb(248, 248, 242)">,</span><span class="token plain"> </span><span class="token number">37.50129417536773</span><span class="token punctuation" style="color:rgb(248, 248, 242)">,</span><span class="token plain"> </span><span class="token number">37.48258811529137</span><span class="token punctuation" style="color:rgb(248, 248, 242)">,</span><span class="token plain"> </span><span class="token number">37.557607696911184</span><span class="token plain"></span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain"></span><span class="token punctuation" style="color:rgb(248, 248, 242)">)</span><span class="token punctuation" style="color:rgb(248, 248, 242)">;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain"></span><span class="token class-name">List</span><span class="token generics punctuation" style="color:rgb(248, 248, 242)">&lt;</span><span class="token generics class-name">Double</span><span class="token generics punctuation" style="color:rgb(248, 248, 242)">&gt;</span><span class="token plain"> xPoints </span><span class="token operator">=</span><span class="token plain"> </span><span class="token class-name">List</span><span class="token punctuation" style="color:rgb(248, 248, 242)">.</span><span class="token function" style="color:rgb(80, 250, 123)">of</span><span class="token punctuation" style="color:rgb(248, 248, 242)">(</span><span class="token number">126.97094933811682</span><span class="token punctuation" style="color:rgb(248, 248, 242)">,</span><span class="token plain"> </span><span class="token number">126.88474839801178</span><span class="token punctuation" style="color:rgb(248, 248, 242)">)</span><span class="token punctuation" style="color:rgb(248, 248, 242)">;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain"></span><span class="token class-name">List</span><span class="token generics punctuation" style="color:rgb(248, 248, 242)">&lt;</span><span class="token generics class-name">Double</span><span class="token generics punctuation" style="color:rgb(248, 248, 242)">&gt;</span><span class="token plain"> yPoints </span><span class="token operator">=</span><span class="token plain"> </span><span class="token class-name">List</span><span class="token punctuation" style="color:rgb(248, 248, 242)">.</span><span class="token function" style="color:rgb(80, 250, 123)">of</span><span class="token punctuation" style="color:rgb(248, 248, 242)">(</span><span class="token number">37.55302829553499</span><span class="token punctuation" style="color:rgb(248, 248, 242)">,</span><span class="token plain"> </span><span class="token number">37.50129417536773</span><span class="token punctuation" style="color:rgb(248, 248, 242)">)</span><span class="token punctuation" style="color:rgb(248, 248, 242)">;</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="클립보드에 코드 복사" title="복사" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg class="copyButtonIcon_y97N" viewBox="0 0 24 24"><path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg class="copyButtonSuccessIcon_LjdS" viewBox="0 0 24 24"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="image_size--route_size">IMAGE_SIZE &amp; ROUTE_SIZE<a href="#image_size--route_size" class="hash-link" aria-label="IMAGE_SIZE &amp; ROUTE_SIZE에 대한 직접 링크" title="IMAGE_SIZE &amp; ROUTE_SIZE에 대한 직접 링크">​</a></h3><div class="language-java codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockTitle_Ktv7">RouteImageGenerator.java</div><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-java codeBlock_bY9V thin-scrollbar"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token keyword" style="color:rgb(189, 147, 249);font-style:italic">private</span><span class="token plain"> </span><span class="token keyword" style="color:rgb(189, 147, 249);font-style:italic">static</span><span class="token plain"> </span><span class="token keyword" style="color:rgb(189, 147, 249);font-style:italic">final</span><span class="token plain"> </span><span class="token keyword" style="color:rgb(189, 147, 249);font-style:italic">int</span><span class="token plain"> </span><span class="token constant" style="color:rgb(189, 147, 249)">IMAGE_SIZE</span><span class="token plain"> </span><span class="token operator">=</span><span class="token plain"> </span><span class="token number">800</span><span class="token punctuation" style="color:rgb(248, 248, 242)">;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain"></span><span class="token keyword" style="color:rgb(189, 147, 249);font-style:italic">private</span><span class="token plain"> </span><span class="token keyword" style="color:rgb(189, 147, 249);font-style:italic">static</span><span class="token plain"> </span><span class="token keyword" style="color:rgb(189, 147, 249);font-style:italic">final</span><span class="token plain"> </span><span class="token keyword" style="color:rgb(189, 147, 249);font-style:italic">int</span><span class="token plain"> </span><span class="token constant" style="color:rgb(189, 147, 249)">ROUTE_SIZE</span><span class="token plain"> </span><span class="token operator">=</span><span class="token plain"> </span><span class="token number">600</span><span class="token punctuation" style="color:rgb(248, 248, 242)">;</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="클립보드에 코드 복사" title="복사" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg class="copyButtonIcon_y97N" viewBox="0 0 24 24"><path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg class="copyButtonSuccessIcon_LjdS" viewBox="0 0 24 24"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div><p>코드를 보면 이미지 크기와 경로 크기가 있습니다.<br>
 <!-- -->이미지 크기는 말 그대로 이미지의 width와 height를 의미한다.<br>
 <!-- -->경로 크기의 경우 상하좌우 100px 만큼의 간격을 위해 존재한다.<br>
@@ -120,8 +128,8 @@
         </item>
         <item>
             <title><![CDATA[경로 이미지 생성하기 - 파이썬]]></title>
-            <link>https://greeng00se.github.io/38</link>
-            <guid>https://greeng00se.github.io/38</guid>
+            <link>https://greeng00se.github.io/route-image-python</link>
+            <guid>https://greeng00se.github.io/route-image-python</guid>
             <pubDate>Mon, 31 Jul 2023 00:00:00 GMT</pubDate>
             <description><![CDATA[개요]]></description>
             <content:encoded><![CDATA[<h3 class="anchor anchorWithStickyNavbar_LWe7" id="개요">개요<a href="#개요" class="hash-link" aria-label="개요에 대한 직접 링크" title="개요에 대한 직접 링크">​</a></h3><p>이전에 기술 구현 가능 여부를 조사하면서 파이썬을 사용한 내용을 정리한 내용이다.   </p><h3 class="anchor anchorWithStickyNavbar_LWe7" id="사용-기술">사용 기술<a href="#사용-기술" class="hash-link" aria-label="사용 기술에 대한 직접 링크" title="사용 기술에 대한 직접 링크">​</a></h3><p>언어: Python 3.10<br>
@@ -150,8 +158,8 @@
         </item>
         <item>
             <title><![CDATA[Mockito 이용해서 static 메서드 모킹하기]]></title>
-            <link>https://greeng00se.github.io/37</link>
-            <guid>https://greeng00se.github.io/37</guid>
+            <link>https://greeng00se.github.io/mock-static-method</link>
+            <guid>https://greeng00se.github.io/mock-static-method</guid>
             <pubDate>Sun, 30 Jul 2023 00:00:00 GMT</pubDate>
             <description><![CDATA[개요]]></description>
             <content:encoded><![CDATA[<h3 class="anchor anchorWithStickyNavbar_LWe7" id="개요">개요<a href="#개요" class="hash-link" aria-label="개요에 대한 직접 링크" title="개요에 대한 직접 링크">​</a></h3><p>정적 팩터리 메서드를 모킹한다는 것은 객체지향적인 관점에서 볼 때 안티패턴이다.<br>
@@ -168,8 +176,8 @@
         </item>
         <item>
             <title><![CDATA[경로 이미지 생성하기 - 기술 선택]]></title>
-            <link>https://greeng00se.github.io/36</link>
-            <guid>https://greeng00se.github.io/36</guid>
+            <link>https://greeng00se.github.io/route-image-intro</link>
+            <guid>https://greeng00se.github.io/route-image-intro</guid>
             <pubDate>Thu, 27 Jul 2023 00:00:00 GMT</pubDate>
             <description><![CDATA[./route.png]]></description>
             <content:encoded><![CDATA[<p><img loading="lazy" alt="./route.png" src="/assets/images/route-89cacb9b7815a3191ab1f9d9e23c43a1.png" width="1014" height="902" class="img_ev3q"></p><h2 class="anchor anchorWithStickyNavbar_LWe7" id="이미지-생성의-책임">이미지 생성의 책임<a href="#이미지-생성의-책임" class="hash-link" aria-label="이미지 생성의 책임에 대한 직접 링크" title="이미지 생성의 책임에 대한 직접 링크">​</a></h2><p>위 와이어 프레임에서 <code>여행 히스토리</code>와 <code>여행에 대한 감상을 위한 경로 이미지</code>의 경우, 맵 API에서 제공하는 도형 그리기 API(네이버 맵 API 기준 Polyline)를 사용할 수 없다.<br>
@@ -183,8 +191,8 @@
         </item>
         <item>
             <title><![CDATA[자바 17, 스프링 6.0, 스프링 부트 3.1]]></title>
-            <link>https://greeng00se.github.io/35</link>
-            <guid>https://greeng00se.github.io/35</guid>
+            <link>https://greeng00se.github.io/java-spring-springboot</link>
+            <guid>https://greeng00se.github.io/java-spring-springboot</guid>
             <pubDate>Mon, 24 Jul 2023 00:00:00 GMT</pubDate>
             <description><![CDATA[자바 17, 스프링 6.0, 스프링 부트 3.1]]></description>
             <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="자바-17-스프링-60-스프링-부트-31">자바 17, 스프링 6.0, 스프링 부트 3.1<a href="#자바-17-스프링-60-스프링-부트-31" class="hash-link" aria-label="자바 17, 스프링 6.0, 스프링 부트 3.1에 대한 직접 링크" title="자바 17, 스프링 6.0, 스프링 부트 3.1에 대한 직접 링크">​</a></h2><p>팀 프로젝트를 진행하면서 스프링 부트 3.1을 사용하게 되었다.<br>
@@ -209,8 +217,8 @@
         </item>
         <item>
             <title><![CDATA[웹소켓]]></title>
-            <link>https://greeng00se.github.io/34</link>
-            <guid>https://greeng00se.github.io/34</guid>
+            <link>https://greeng00se.github.io/websocket</link>
+            <guid>https://greeng00se.github.io/websocket</guid>
             <pubDate>Mon, 26 Jun 2023 00:00:00 GMT</pubDate>
             <description><![CDATA[웹소켓]]></description>
             <content:encoded><![CDATA[<h3 class="anchor anchorWithStickyNavbar_LWe7" id="웹소켓">웹소켓<a href="#웹소켓" class="hash-link" aria-label="웹소켓에 대한 직접 링크" title="웹소켓에 대한 직접 링크">​</a></h3><p>단일 TCP 연결을 통해 클라이언트와 서버 간 전이중 양방향 통신을 지원하는 프로토콜<br>
@@ -260,8 +268,8 @@
         </item>
         <item>
             <title><![CDATA[우아한테크코스 레벨 2 회고]]></title>
-            <link>https://greeng00se.github.io/32</link>
-            <guid>https://greeng00se.github.io/32</guid>
+            <link>https://greeng00se.github.io/woowacourse-level2-retrospective</link>
+            <guid>https://greeng00se.github.io/woowacourse-level2-retrospective</guid>
             <pubDate>Sun, 11 Jun 2023 00:00:00 GMT</pubDate>
             <description><![CDATA[23년의 6월이 오고, 레벨 2가 끝났다.]]></description>
             <content:encoded><![CDATA[<p>23년의 6월이 오고, 레벨 2가 끝났다.<br>
@@ -280,8 +288,8 @@
         </item>
         <item>
             <title><![CDATA[레벨 2 - 레벨 인터뷰 회고]]></title>
-            <link>https://greeng00se.github.io/31</link>
-            <guid>https://greeng00se.github.io/31</guid>
+            <link>https://greeng00se.github.io/level2-interview-retrospective</link>
+            <guid>https://greeng00se.github.io/level2-interview-retrospective</guid>
             <pubDate>Thu, 08 Jun 2023 00:00:00 GMT</pubDate>
             <description><![CDATA[레벨 인터뷰]]></description>
             <content:encoded><![CDATA[<h3 class="anchor anchorWithStickyNavbar_LWe7" id="레벨-인터뷰">레벨 인터뷰<a href="#레벨-인터뷰" class="hash-link" aria-label="레벨 인터뷰에 대한 직접 링크" title="레벨 인터뷰에 대한 직접 링크">​</a></h3><p>레벨 1 때는 준비해둔 내용으로 인터뷰를 진행해서 그렇게 특별한 부분이 없었다.<br>
@@ -302,8 +310,8 @@
         </item>
         <item>
             <title><![CDATA[장바구니 주문 미션 회고]]></title>
-            <link>https://greeng00se.github.io/30</link>
-            <guid>https://greeng00se.github.io/30</guid>
+            <link>https://greeng00se.github.io/order-retrospective</link>
+            <guid>https://greeng00se.github.io/order-retrospective</guid>
             <pubDate>Sun, 04 Jun 2023 00:00:00 GMT</pubDate>
             <description><![CDATA[장바구니 주문 미션]]></description>
             <content:encoded><![CDATA[<h3 class="anchor anchorWithStickyNavbar_LWe7" id="장바구니-주문-미션">장바구니 주문 미션<a href="#장바구니-주문-미션" class="hash-link" aria-label="장바구니 주문 미션에 대한 직접 링크" title="장바구니 주문 미션에 대한 직접 링크">​</a></h3><p>배포 및 협업을 할 수 있는 미션이었다.<br>
@@ -328,8 +336,8 @@
         </item>
         <item>
             <title><![CDATA[[테코챗] 3. 기능 구현]]></title>
-            <link>https://greeng00se.github.io/29</link>
-            <guid>https://greeng00se.github.io/29</guid>
+            <link>https://greeng00se.github.io/tecochat-retrospective-3</link>
+            <guid>https://greeng00se.github.io/tecochat-retrospective-3</guid>
             <pubDate>Thu, 01 Jun 2023 00:00:00 GMT</pubDate>
             <description><![CDATA[개요]]></description>
             <content:encoded><![CDATA[<h3 class="anchor anchorWithStickyNavbar_LWe7" id="개요">개요<a href="#개요" class="hash-link" aria-label="개요에 대한 직접 링크" title="개요에 대한 직접 링크">​</a></h3><p>원래 목적인 <code>크루들의 학습에 도움</code>을 주기 위해 어떤 기능을 추가해야 할지 고민을 많이 했다.<br>
@@ -351,8 +359,8 @@
         </item>
         <item>
             <title><![CDATA[컴포지트 패턴으로 요금 정책 추상화하기]]></title>
-            <link>https://greeng00se.github.io/28</link>
-            <guid>https://greeng00se.github.io/28</guid>
+            <link>https://greeng00se.github.io/composite</link>
+            <guid>https://greeng00se.github.io/composite</guid>
             <pubDate>Fri, 26 May 2023 00:00:00 GMT</pubDate>
             <description><![CDATA[요구사항]]></description>
             <content:encoded><![CDATA[<h3 class="anchor anchorWithStickyNavbar_LWe7" id="요구사항">요구사항<a href="#요구사항" class="hash-link" aria-label="요구사항에 대한 직접 링크" title="요구사항에 대한 직접 링크">​</a></h3><p>지하철 미션에는 다음과 같은 요구사항이 있었다.</p><ul><li>거리별 추가 요금 정책</li><li>노선별 추가 요금 정책</li><li>연령별 요금 할인 정책</li></ul><h3 class="anchor anchorWithStickyNavbar_LWe7" id="인터페이스-사용">인터페이스 사용<a href="#인터페이스-사용" class="hash-link" aria-label="인터페이스 사용에 대한 직접 링크" title="인터페이스 사용에 대한 직접 링크">​</a></h3><p>요금 정책은 다음과 같이 인터페이스로 표현할 수 있다.<br>
@@ -373,8 +381,8 @@
         </item>
         <item>
             <title><![CDATA[지하철 미션 회고]]></title>
-            <link>https://greeng00se.github.io/27</link>
-            <guid>https://greeng00se.github.io/27</guid>
+            <link>https://greeng00se.github.io/subway-retrospective</link>
+            <guid>https://greeng00se.github.io/subway-retrospective</guid>
             <pubDate>Thu, 25 May 2023 00:00:00 GMT</pubDate>
             <description><![CDATA[지하철 미션]]></description>
             <content:encoded><![CDATA[<h3 class="anchor anchorWithStickyNavbar_LWe7" id="지하철-미션">지하철 미션<a href="#지하철-미션" class="hash-link" aria-label="지하철 미션에 대한 직접 링크" title="지하철 미션에 대한 직접 링크">​</a></h3><p>점점 일정이 많아지는 느낌이 들면서 회고가 늦어진다.<br>
@@ -403,8 +411,8 @@
         </item>
         <item>
             <title><![CDATA[중복과 우발적 중복]]></title>
-            <link>https://greeng00se.github.io/26</link>
-            <guid>https://greeng00se.github.io/26</guid>
+            <link>https://greeng00se.github.io/accidental-duplication</link>
+            <guid>https://greeng00se.github.io/accidental-duplication</guid>
             <pubDate>Wed, 24 May 2023 00:00:00 GMT</pubDate>
             <description><![CDATA[장바구니 미션에서는 상품 추가와 상품 수정에 대한 요구사항이 있었다.]]></description>
             <content:encoded><![CDATA[<p>장바구니 미션에서는 상품 추가와 상품 수정에 대한 요구사항이 있었다.<br>
@@ -425,8 +433,8 @@
         </item>
         <item>
             <title><![CDATA[웹 장바구니 미션 회고]]></title>
-            <link>https://greeng00se.github.io/25</link>
-            <guid>https://greeng00se.github.io/25</guid>
+            <link>https://greeng00se.github.io/shopping-cart-retrospective</link>
+            <guid>https://greeng00se.github.io/shopping-cart-retrospective</guid>
             <pubDate>Fri, 12 May 2023 00:00:00 GMT</pubDate>
             <description><![CDATA[웹 장바구니 미션]]></description>
             <content:encoded><![CDATA[<h3 class="anchor anchorWithStickyNavbar_LWe7" id="웹-장바구니-미션">웹 장바구니 미션<a href="#웹-장바구니-미션" class="hash-link" aria-label="웹 장바구니 미션에 대한 직접 링크" title="웹 장바구니 미션에 대한 직접 링크">​</a></h3><p>장바구니 미션은 블랙캣이랑 진행했다.<br>
@@ -448,8 +456,8 @@
         </item>
         <item>
             <title><![CDATA[웹 자동차 미션 회고]]></title>
-            <link>https://greeng00se.github.io/24</link>
-            <guid>https://greeng00se.github.io/24</guid>
+            <link>https://greeng00se.github.io/web-racing-car-retrospective</link>
+            <guid>https://greeng00se.github.io/web-racing-car-retrospective</guid>
             <pubDate>Tue, 02 May 2023 00:00:00 GMT</pubDate>
             <description><![CDATA[웹 자동차 미션]]></description>
             <content:encoded><![CDATA[<h3 class="anchor anchorWithStickyNavbar_LWe7" id="웹-자동차-미션">웹 자동차 미션<a href="#웹-자동차-미션" class="hash-link" aria-label="웹 자동차 미션에 대한 직접 링크" title="웹 자동차 미션에 대한 직접 링크">​</a></h3><p>사이드 프로젝트를 한다고 시간이 많이 없어서 회고가 늦어졌다.<br>
@@ -476,8 +484,8 @@
         </item>
         <item>
             <title><![CDATA[[테코챗] 2. 배포]]></title>
-            <link>https://greeng00se.github.io/23</link>
-            <guid>https://greeng00se.github.io/23</guid>
+            <link>https://greeng00se.github.io/tecochat-retrospective-2</link>
+            <guid>https://greeng00se.github.io/tecochat-retrospective-2</guid>
             <pubDate>Mon, 01 May 2023 00:00:00 GMT</pubDate>
             <description><![CDATA[프론트엔트]]></description>
             <content:encoded><![CDATA[<h3 class="anchor anchorWithStickyNavbar_LWe7" id="프론트엔트">프론트엔트<a href="#프론트엔트" class="hash-link" aria-label="프론트엔트에 대한 직접 링크" title="프론트엔트에 대한 직접 링크">​</a></h3><p>닉네임을 입력하여 간단히 로그인하는 화면, 채팅 목록을 보여주는 화면도 만들었고 단일 채팅을 확인할 수 있는 화면도 만들었다.<br>
@@ -504,8 +512,8 @@
         </item>
         <item>
             <title><![CDATA[Jenkins로 CI/CD 설정]]></title>
-            <link>https://greeng00se.github.io/22</link>
-            <guid>https://greeng00se.github.io/22</guid>
+            <link>https://greeng00se.github.io/jenkins</link>
+            <guid>https://greeng00se.github.io/jenkins</guid>
             <pubDate>Sun, 30 Apr 2023 00:00:00 GMT</pubDate>
             <description><![CDATA[설정 환경]]></description>
             <content:encoded><![CDATA[<h3 class="anchor anchorWithStickyNavbar_LWe7" id="설정-환경">설정 환경<a href="#설정-환경" class="hash-link" aria-label="설정 환경에 대한 직접 링크" title="설정 환경에 대한 직접 링크">​</a></h3><p>소프트웨어 이미지: Amazon Linux 2023 AMI<br>
@@ -531,8 +539,8 @@
         </item>
         <item>
             <title><![CDATA[[테코챗] 1. 프로토타입 만들기]]></title>
-            <link>https://greeng00se.github.io/21</link>
-            <guid>https://greeng00se.github.io/21</guid>
+            <link>https://greeng00se.github.io/tecochat-retrospective-1</link>
+            <guid>https://greeng00se.github.io/tecochat-retrospective-1</guid>
             <pubDate>Sat, 22 Apr 2023 00:00:00 GMT</pubDate>
             <description><![CDATA[4월 21일 금요일]]></description>
             <content:encoded><![CDATA[<h3 class="anchor anchorWithStickyNavbar_LWe7" id="4월-21일-금요일">4월 21일 금요일<a href="#4월-21일-금요일" class="hash-link" aria-label="4월 21일 금요일에 대한 직접 링크" title="4월 21일 금요일에 대한 직접 링크">​</a></h3><p>레벨 2를 시작한 뒤 내가 학습에 대한 방향을 잃어버렸다는 생각이 들었다.<br>
@@ -563,8 +571,8 @@
         </item>
         <item>
             <title><![CDATA[[책] 상자 밖에 있는 사람]]></title>
-            <link>https://greeng00se.github.io/20</link>
-            <guid>https://greeng00se.github.io/20</guid>
+            <link>https://greeng00se.github.io/book-leadership-and-self-deception</link>
+            <guid>https://greeng00se.github.io/book-leadership-and-self-deception</guid>
             <pubDate>Sat, 08 Apr 2023 00:00:00 GMT</pubDate>
             <description><![CDATA[책 정보]]></description>
             <content:encoded><![CDATA[<h3 class="anchor anchorWithStickyNavbar_LWe7" id="책-정보">책 정보<a href="#책-정보" class="hash-link" aria-label="책 정보에 대한 직접 링크" title="책 정보에 대한 직접 링크">​</a></h3><blockquote><p>상자 밖에 있는 사람<br>
@@ -601,8 +609,8 @@
         </item>
         <item>
             <title><![CDATA[InnoDB 스토리지 엔진의 잠금]]></title>
-            <link>https://greeng00se.github.io/19</link>
-            <guid>https://greeng00se.github.io/19</guid>
+            <link>https://greeng00se.github.io/innodb-lock</link>
+            <guid>https://greeng00se.github.io/innodb-lock</guid>
             <pubDate>Fri, 07 Apr 2023 00:00:00 GMT</pubDate>
             <description><![CDATA[InnoDB 스토리지 엔진의 잠금]]></description>
             <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="innodb-스토리지-엔진의-잠금">InnoDB 스토리지 엔진의 잠금<a href="#innodb-스토리지-엔진의-잠금" class="hash-link" aria-label="InnoDB 스토리지 엔진의 잠금에 대한 직접 링크" title="InnoDB 스토리지 엔진의 잠금에 대한 직접 링크">​</a></h2><p>MySQL에서 제공하는 잠금과 별개로 스토리지 엔진 내부에서 로우 단위의 잠금을 지원한다.<br>
@@ -631,8 +639,8 @@
         </item>
         <item>
             <title><![CDATA[MySQL 엔진의 잠금]]></title>
-            <link>https://greeng00se.github.io/18</link>
-            <guid>https://greeng00se.github.io/18</guid>
+            <link>https://greeng00se.github.io/mysql-lock</link>
+            <guid>https://greeng00se.github.io/mysql-lock</guid>
             <pubDate>Thu, 06 Apr 2023 00:00:00 GMT</pubDate>
             <description><![CDATA[MySQL 엔진의 잠금]]></description>
             <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="mysql-엔진의-잠금">MySQL 엔진의 잠금<a href="#mysql-엔진의-잠금" class="hash-link" aria-label="MySQL 엔진의 잠금에 대한 직접 링크" title="MySQL 엔진의 잠금에 대한 직접 링크">​</a></h2><p>MySQL에서의 락은 스토리지 엔진 레벨과, MySQL 엔진 레벨로 나눌 수 있다.<br>
@@ -655,8 +663,8 @@
         </item>
         <item>
             <title><![CDATA[트랜잭션과 격리수준]]></title>
-            <link>https://greeng00se.github.io/17</link>
-            <guid>https://greeng00se.github.io/17</guid>
+            <link>https://greeng00se.github.io/transaction-and-isolation</link>
+            <guid>https://greeng00se.github.io/transaction-and-isolation</guid>
             <pubDate>Wed, 05 Apr 2023 00:00:00 GMT</pubDate>
             <description><![CDATA[트랜잭션(Transaction)]]></description>
             <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="트랜잭션transaction">트랜잭션(Transaction)<a href="#트랜잭션transaction" class="hash-link" aria-label="트랜잭션(Transaction)에 대한 직접 링크" title="트랜잭션(Transaction)에 대한 직접 링크">​</a></h2><p>데이터베이스에서 논리적 기능을 수행하기 위한 작업의 단위를 말한다.<br>
@@ -689,8 +697,8 @@
         </item>
         <item>
             <title><![CDATA[테스트 대역]]></title>
-            <link>https://greeng00se.github.io/16</link>
-            <guid>https://greeng00se.github.io/16</guid>
+            <link>https://greeng00se.github.io/test-double</link>
+            <guid>https://greeng00se.github.io/test-double</guid>
             <pubDate>Tue, 04 Apr 2023 00:00:00 GMT</pubDate>
             <description><![CDATA[테스트 대역이란?]]></description>
             <content:encoded><![CDATA[<h3 class="anchor anchorWithStickyNavbar_LWe7" id="테스트-대역이란">테스트 대역이란?<a href="#테스트-대역이란" class="hash-link" aria-label="테스트 대역이란?에 대한 직접 링크" title="테스트 대역이란?에 대한 직접 링크">​</a></h3><p>모든 유형의 테스트를 위한 가짜 의존성을 의미하고, 테스트가 실행될 때 다른 객체를 대신한다.<br>
@@ -716,8 +724,8 @@
         </item>
         <item>
             <title><![CDATA[자바 클래스 파일 구조]]></title>
-            <link>https://greeng00se.github.io/15</link>
-            <guid>https://greeng00se.github.io/15</guid>
+            <link>https://greeng00se.github.io/java-class-file</link>
+            <guid>https://greeng00se.github.io/java-class-file</guid>
             <pubDate>Mon, 03 Apr 2023 00:00:00 GMT</pubDate>
             <description><![CDATA[클래스 파일]]></description>
             <content:encoded><![CDATA[<h3 class="anchor anchorWithStickyNavbar_LWe7" id="클래스-파일">클래스 파일<a href="#클래스-파일" class="hash-link" aria-label="클래스 파일에 대한 직접 링크" title="클래스 파일에 대한 직접 링크">​</a></h3><p>자바 소스코드가 실행이 되려면 자바 컴파일러(javac)를 통해 소스코드를 클래스파일로 변환해야 한다.<br>
@@ -743,8 +751,8 @@
         </item>
         <item>
             <title><![CDATA[커스텀 JdbcTemplate 만들기]]></title>
-            <link>https://greeng00se.github.io/14</link>
-            <guid>https://greeng00se.github.io/14</guid>
+            <link>https://greeng00se.github.io/custom-jdbc-template</link>
+            <guid>https://greeng00se.github.io/custom-jdbc-template</guid>
             <pubDate>Sun, 02 Apr 2023 00:00:00 GMT</pubDate>
             <description><![CDATA[체스 미션에서는 데이터베이스에서 값을 가져오기 위해 DAO를 사용했다.]]></description>
             <content:encoded><![CDATA[<p>체스 미션에서는 데이터베이스에서 값을 가져오기 위해 DAO를 사용했다.<br>
@@ -764,8 +772,8 @@
         </item>
         <item>
             <title><![CDATA[우아한테크코스 레벨 1 회고]]></title>
-            <link>https://greeng00se.github.io/13</link>
-            <guid>https://greeng00se.github.io/13</guid>
+            <link>https://greeng00se.github.io/woowacourse-level1-retrospective</link>
+            <guid>https://greeng00se.github.io/woowacourse-level1-retrospective</guid>
             <pubDate>Sat, 01 Apr 2023 00:00:00 GMT</pubDate>
             <description><![CDATA[레벨 1이 끝났다.]]></description>
             <content:encoded><![CDATA[<p>레벨 1이 끝났다.<br>
@@ -805,8 +813,8 @@
         </item>
         <item>
             <title><![CDATA[체스 미션 회고]]></title>
-            <link>https://greeng00se.github.io/12</link>
-            <guid>https://greeng00se.github.io/12</guid>
+            <link>https://greeng00se.github.io/chess-retrospective</link>
+            <guid>https://greeng00se.github.io/chess-retrospective</guid>
             <pubDate>Fri, 31 Mar 2023 00:00:00 GMT</pubDate>
             <description><![CDATA[체스]]></description>
             <content:encoded><![CDATA[<h3 class="anchor anchorWithStickyNavbar_LWe7" id="체스">체스<a href="#체스" class="hash-link" aria-label="체스에 대한 직접 링크" title="체스에 대한 직접 링크">​</a></h3><p>체스 미션에는 가비와 페어가 매칭되었다!<br>
@@ -849,8 +857,8 @@
         </item>
         <item>
             <title><![CDATA[일반적인 책임 할당을 위한 패턴]]></title>
-            <link>https://greeng00se.github.io/11</link>
-            <guid>https://greeng00se.github.io/11</guid>
+            <link>https://greeng00se.github.io/grasp</link>
+            <guid>https://greeng00se.github.io/grasp</guid>
             <pubDate>Thu, 30 Mar 2023 00:00:00 GMT</pubDate>
             <description><![CDATA[GRASP(General Responsibility Assignment Software Pattern)]]></description>
             <content:encoded><![CDATA[<h3 class="anchor anchorWithStickyNavbar_LWe7" id="graspgeneral-responsibility-assignment-software-pattern">GRASP(General Responsibility Assignment Software Pattern)<a href="#graspgeneral-responsibility-assignment-software-pattern" class="hash-link" aria-label="GRASP(General Responsibility Assignment Software Pattern)에 대한 직접 링크" title="GRASP(General Responsibility Assignment Software Pattern)에 대한 직접 링크">​</a></h3><p>크레이그 라만의 Applying UML and Patterns이라는 책에서 나온 책임 할당을 위한 패턴</p><p>각 패턴마다 Solution과 Problem로 구성되어 있다.</p><h3 class="anchor anchorWithStickyNavbar_LWe7" id="정보-전문가-패턴information-expert">정보 전문가 패턴(Information Expert)<a href="#정보-전문가-패턴information-expert" class="hash-link" aria-label="정보 전문가 패턴(Information Expert)에 대한 직접 링크" title="정보 전문가 패턴(Information Expert)에 대한 직접 링크">​</a></h3><p>Q: 객체에 책임을 할당하는 기본 원칙은 무엇인가?</p><p>A: 책임을 수행하는 데 필요한 정보를 가진 클래스(정보 전문가)에게 책임을 할당한다.</p><p>정보와 행동을 가까운 곳에 위치시키기 때문에 캡슐화를 유지할 수 있다.</p><p>필요한 정보를 가진 객체들로 책임이 분산된다.</p><h3 class="anchor anchorWithStickyNavbar_LWe7" id="창조자-패턴creator">창조자 패턴(Creator)<a href="#창조자-패턴creator" class="hash-link" aria-label="창조자 패턴(Creator)에 대한 직접 링크" title="창조자 패턴(Creator)에 대한 직접 링크">​</a></h3><p>Q: 누가 객체 A를 생성하는가?</p><p>A: 다음의 조건을 최대한 많이 만족하는 객체에게 객체 생성 책임을 할당해야 한다.</p><ul><li>B가 A 객체를 포함 또는 참조한다.</li><li>B가 A 객체를 기록한다.</li><li>B가 A 객체를 긴밀하게 사용한다.</li><li>B가 A 객체의 초기값을 가지고 있다.</li></ul><p>생성 예정인 객체와 연관되어 있는 객체가 생성 책임을 가지고 있게 된다면, 이미 해당 객체와 결합되어있다고 생각할 수 있다. 따라서 전체적인 결합도를 낮게 유지할 수 있다.</p><h3 class="anchor anchorWithStickyNavbar_LWe7" id="낮은-결합도-패턴low-coupling">낮은 결합도 패턴(Low Coupling)<a href="#낮은-결합도-패턴low-coupling" class="hash-link" aria-label="낮은 결합도 패턴(Low Coupling)에 대한 직접 링크" title="낮은 결합도 패턴(Low Coupling)에 대한 직접 링크">​</a></h3><p>Q: 의존성을 낮추고 변화의 영향을 줄이며 재사용성을 증가시키는 방법은?</p><p>A: 전체적인 결합이 낮게 유지되도록 책임을 할당해야 한다.</p><blockquote><p>결합도(Coupling)
@@ -861,8 +869,8 @@
         </item>
         <item>
             <title><![CDATA[블랙잭 미션 회고]]></title>
-            <link>https://greeng00se.github.io/10</link>
-            <guid>https://greeng00se.github.io/10</guid>
+            <link>https://greeng00se.github.io/blackjack-retrospective</link>
+            <guid>https://greeng00se.github.io/blackjack-retrospective</guid>
             <pubDate>Tue, 14 Mar 2023 00:00:00 GMT</pubDate>
             <description><![CDATA[블랙잭]]></description>
             <content:encoded><![CDATA[<h3 class="anchor anchorWithStickyNavbar_LWe7" id="블랙잭">블랙잭<a href="#블랙잭" class="hash-link" aria-label="블랙잭에 대한 직접 링크" title="블랙잭에 대한 직접 링크">​</a></h3><p>블랙잭 미션에서는 후추와 페어(조미료 듀오?)가 매칭되었다.<br>
@@ -900,8 +908,8 @@
         </item>
         <item>
             <title><![CDATA[사다리 타기 미션 회고]]></title>
-            <link>https://greeng00se.github.io/9</link>
-            <guid>https://greeng00se.github.io/9</guid>
+            <link>https://greeng00se.github.io/ladder-retrospective</link>
+            <guid>https://greeng00se.github.io/ladder-retrospective</guid>
             <pubDate>Sun, 26 Feb 2023 00:00:00 GMT</pubDate>
             <description><![CDATA[사다리 타기]]></description>
             <content:encoded><![CDATA[<h3 class="anchor anchorWithStickyNavbar_LWe7" id="사다리-타기">사다리 타기<a href="#사다리-타기" class="hash-link" aria-label="사다리 타기에 대한 직접 링크" title="사다리 타기에 대한 직접 링크">​</a></h3><p>사다리 타기 미션에서는 우가와 페어가 매칭되었다.<br>
@@ -941,8 +949,8 @@
         </item>
         <item>
             <title><![CDATA[자동차 경주 미션 회고]]></title>
-            <link>https://greeng00se.github.io/8</link>
-            <guid>https://greeng00se.github.io/8</guid>
+            <link>https://greeng00se.github.io/racing-car-retrospective</link>
+            <guid>https://greeng00se.github.io/racing-car-retrospective</guid>
             <pubDate>Tue, 14 Feb 2023 00:00:00 GMT</pubDate>
             <description><![CDATA[자동차 경주]]></description>
             <content:encoded><![CDATA[<h3 class="anchor anchorWithStickyNavbar_LWe7" id="자동차-경주">자동차 경주<a href="#자동차-경주" class="hash-link" aria-label="자동차 경주에 대한 직접 링크" title="자동차 경주에 대한 직접 링크">​</a></h3><p>자동차 경주 미션에서는 다즐과 페어가 매칭되었다.<br>
@@ -976,8 +984,8 @@
         </item>
         <item>
             <title><![CDATA[Parameterized Tests]]></title>
-            <link>https://greeng00se.github.io/7</link>
-            <guid>https://greeng00se.github.io/7</guid>
+            <link>https://greeng00se.github.io/parameterized-tests</link>
+            <guid>https://greeng00se.github.io/parameterized-tests</guid>
             <pubDate>Sun, 12 Feb 2023 00:00:00 GMT</pubDate>
             <description><![CDATA[테스트를 작성하다보면 매개변수에 따라 반복이 되는 테스트들이 생긴다.]]></description>
             <content:encoded><![CDATA[<p>테스트를 작성하다보면 매개변수에 따라 반복이 되는 테스트들이 생긴다.<br>
@@ -992,8 +1000,8 @@
         </item>
         <item>
             <title><![CDATA[IntelliJ 설정]]></title>
-            <link>https://greeng00se.github.io/6</link>
-            <guid>https://greeng00se.github.io/6</guid>
+            <link>https://greeng00se.github.io/intellij-settings</link>
+            <guid>https://greeng00se.github.io/intellij-settings</guid>
             <pubDate>Mon, 30 Jan 2023 00:00:00 GMT</pubDate>
             <description><![CDATA[Import 자동 적용]]></description>
             <content:encoded><![CDATA[<h3 class="anchor anchorWithStickyNavbar_LWe7" id="import-자동-적용">Import 자동 적용<a href="#import-자동-적용" class="hash-link" aria-label="Import 자동 적용에 대한 직접 링크" title="Import 자동 적용에 대한 직접 링크">​</a></h3><p>Prefrences &gt; Editor &gt; General &gt; Auto Import &gt; Add unambiguous imports on the fly</p><p><img loading="lazy" alt="auto-import" src="/assets/images/auto-import-3dbe46f0109af17296039d52d498225e.png" width="2558" height="1656" class="img_ev3q"></p><h3 class="anchor anchorWithStickyNavbar_LWe7" id="저장시-동작">저장시 동작<a href="#저장시-동작" class="hash-link" aria-label="저장시 동작에 대한 직접 링크" title="저장시 동작에 대한 직접 링크">​</a></h3><p>Prefrences &gt; Tools &gt; Actions on Save</p><p><img loading="lazy" alt="actions-on-save" src="/assets/images/actions-on-save-6c1203027c28ff08919e045812c7d456.png" width="2558" height="1656" class="img_ev3q"></p><p>Reformat Code: Code Reformmating</p><p>Optimize imports: 사용하지 않는 Import 제거</p><p>Rearrange: Code Style &gt; Arrangement 설정 기반 코드 재정렬</p><h3 class="anchor anchorWithStickyNavbar_LWe7" id="메소드-추출-변수-추출시-final-적용">메소드 추출, 변수 추출시 final 적용<a href="#메소드-추출-변수-추출시-final-적용" class="hash-link" aria-label="메소드 추출, 변수 추출시 final 적용에 대한 직접 링크" title="메소드 추출, 변수 추출시 final 적용에 대한 직접 링크">​</a></h3><p>Prefrences &gt; Editor &gt; Code Style &gt; Java &gt; Code Generation &gt; Final Modifier</p><p><img loading="lazy" alt="final-modifier" src="/assets/images/final-modifier-1dd2aea35979423a30869a7b0ebe501a.png" width="2558" height="1656" class="img_ev3q"></p>]]></content:encoded>
@@ -1001,8 +1009,8 @@
         </item>
         <item>
             <title><![CDATA[Kotlin에서 null을 다루는 방법]]></title>
-            <link>https://greeng00se.github.io/5</link>
-            <guid>https://greeng00se.github.io/5</guid>
+            <link>https://greeng00se.github.io/kotlin-null</link>
+            <guid>https://greeng00se.github.io/kotlin-null</guid>
             <pubDate>Mon, 16 Jan 2023 00:00:00 GMT</pubDate>
             <description><![CDATA[nullable 타입]]></description>
             <content:encoded><![CDATA[<h3 class="anchor anchorWithStickyNavbar_LWe7" id="nullable-타입">nullable 타입<a href="#nullable-타입" class="hash-link" aria-label="nullable 타입에 대한 직접 링크" title="nullable 타입에 대한 직접 링크">​</a></h3><p>코틀린은 <code>NullPointerException</code> 예외를 최대한 발생시키지 않기 위해 타입 시스템이 설계되어 있다.<br>
@@ -1021,8 +1029,8 @@
         </item>
         <item>
             <title><![CDATA[JSR-310]]></title>
-            <link>https://greeng00se.github.io/4</link>
-            <guid>https://greeng00se.github.io/4</guid>
+            <link>https://greeng00se.github.io/jsr-310</link>
+            <guid>https://greeng00se.github.io/jsr-310</guid>
             <pubDate>Sun, 08 Jan 2023 00:00:00 GMT</pubDate>
             <description><![CDATA[이전에 많은 문제가 있던 자바의 클래스(Calendar, Date)를 대체하는 날짜와 시간 API]]></description>
             <content:encoded><![CDATA[<p>이전에 많은 문제가 있던 자바의 클래스(Calendar, Date)를 대체하는 날짜와 시간 API<br>
@@ -1037,8 +1045,8 @@
         </item>
         <item>
             <title><![CDATA[[책] 객체지향의 사실과 오해]]></title>
-            <link>https://greeng00se.github.io/3</link>
-            <guid>https://greeng00se.github.io/3</guid>
+            <link>https://greeng00se.github.io/the-essence-of-object-orientation</link>
+            <guid>https://greeng00se.github.io/the-essence-of-object-orientation</guid>
             <pubDate>Sat, 07 Jan 2023 00:00:00 GMT</pubDate>
             <description><![CDATA[책 정보]]></description>
             <content:encoded><![CDATA[<h3 class="anchor anchorWithStickyNavbar_LWe7" id="책-정보">책 정보<a href="#책-정보" class="hash-link" aria-label="책 정보에 대한 직접 링크" title="책 정보에 대한 직접 링크">​</a></h3><blockquote><p>객체지향의 사실과 오해<br>
@@ -1065,8 +1073,8 @@ p.158</p></blockquote>]]></content:encoded>
         </item>
         <item>
             <title><![CDATA[2022년 회고]]></title>
-            <link>https://greeng00se.github.io/2</link>
-            <guid>https://greeng00se.github.io/2</guid>
+            <link>https://greeng00se.github.io/2022-retrospective</link>
+            <guid>https://greeng00se.github.io/2022-retrospective</guid>
             <pubDate>Mon, 02 Jan 2023 00:00:00 GMT</pubDate>
             <description><![CDATA[적당한 전환점, 2022년을 돌아보며]]></description>
             <content:encoded><![CDATA[<p>적당한 전환점, 2022년을 돌아보며  </p><h3 class="anchor anchorWithStickyNavbar_LWe7" id="전역">전역<a href="#전역" class="hash-link" aria-label="전역에 대한 직접 링크" title="전역에 대한 직접 링크">​</a></h3><p>약 1년 6개월간의 공군 정보보호병 생활을 마치고 전역을 했다.<br>
@@ -1088,8 +1096,8 @@ p.158</p></blockquote>]]></content:encoded>
         </item>
         <item>
             <title><![CDATA[[책] 글, 우리도 잘 쓸 수 있습니다.]]></title>
-            <link>https://greeng00se.github.io/1</link>
-            <guid>https://greeng00se.github.io/1</guid>
+            <link>https://greeng00se.github.io/book-writer</link>
+            <guid>https://greeng00se.github.io/book-writer</guid>
             <pubDate>Sun, 01 Jan 2023 00:00:00 GMT</pubDate>
             <description><![CDATA[책 정보]]></description>
             <content:encoded><![CDATA[<h3 class="anchor anchorWithStickyNavbar_LWe7" id="책-정보">책 정보<a href="#책-정보" class="hash-link" aria-label="책 정보에 대한 직접 링크" title="책 정보에 대한 직접 링크">​</a></h3><blockquote><p>글, 우리도 잘 쓸 수 있습니다.<br>
