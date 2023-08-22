@@ -1,0 +1,72 @@
+---
+title: '[테코챗] 2. 배포'
+slug: tecochat-retrospective-2
+tags: [TecoChat, Retrospective]
+---
+
+### 프론트엔트
+
+닉네임을 입력하여 간단히 로그인하는 화면, 채팅 목록을 보여주는 화면도 만들었고 단일 채팅을 확인할 수 있는 화면도 만들었다.  
+추가로 채팅을 이어나갈 수 있게 하는 기능도 추가했다.  
+자잘하게 신경 쓸 부분이 많아서, 프론트엔드 하는 사람들이 대단하다고 생각되었다.  
+여유가 된다면 자신의 채팅을 볼 수 있는 기능이나, 채팅을 이어서 할 수 있는 기능, 댓글 기능도 추가할 예정이다.  
+
+### 백엔드
+
+최대한 빨리 서비스를 크루들에게 제공하기로 정해서, 백엔드는 말랑이 일단 다 만들고 있다.  
+말랑이 한 부분이 너무 많아서 내가 못 따라가는 것 같다.  
+나중에 백엔드 코드를 이해하는 시간을 가져야겠다.  
+
+### Http Request Header
+
+아직 인증에 대한 부분을 하지 않아서 요청 헤더에 이름을 보내기로 했다.  
+말랑이 한글은 안된다고 말해줘서 Base64로 인코딩하고, 백엔드에서 디코딩 하여 사용하기로 했다.  
+아래는 pinia에 있는 name 값을 인코딩 하는 코드다. deprecated 되었다는데, 다른 방법을 사용할 줄 몰라서 일단 이걸 사용했다.  
+
+```ts
+const encodedName = () => {
+  const uriComponent = unescape(encodeURIComponent(name.value));
+  return btoa(uriComponent);
+};
+```
+
+### Elastic Beanstalk
+
+가장 빠르게 백엔드를 배포할 수 있는 방법이 뭘지 고민하다가 Elastic Beanstalk를 사용하기로 했다.  
+Elastic Beanstalk를 사용하면 인프라에 대해 잘 알지 못해도 애플리케이션을 빠르게 배포하고 관리할 수 있다.  
+모니터링, 로깅, 로드 밸런싱 등 다양한 기능을 제공한다.  
+
+### Elastic Beanstalk RDS 설정 후 분리
+
+초기 설정 시 RDS를 연결하고 설정 완료 후 분리한다면, Beanstalk 인스턴스 -> RDS 요청 시 인바운드 설정을 안 해도 된다.  
+RDS 분리 시 Beanstalk에 기본적으로 설정되어 있는 RDS_HOSTNAME, RDS_PORT, RDS_USERNAME, RDS_PASSWORD와 같은 환경 변수가 같이 제거된다.  
+추가로 Elastic Beanstalk로 RDS를 설정하면 기본 데이터베이스 명은 ebdb다.  
+
+### Elastic Beanstalk nginx 설정
+
+업로드하는 zip 파일 내부에 `.platform/nginx/conf.d/` 경로에 설정 파일을 추가하면 nginx 설정을 할 수 있다.  
+
+### Jenkins
+
+백엔드 코드를 일일히 배포하기 불편해서 Jenkins를 이용하여 Repository에 코드를 push 할 때 자동으로 배포가 되게 설정하기로 했다.  
+작년에 확인했을 땐 2022년 12월 31일까지 EC2 ARM 기반 t4g.small이 무료였는데, 다시 들어가 보니 2023년까지 12월 31일까지 t4g.small을 무료로 사용할 수 있었다.  
+t4g.small은 램이 2G인데, 예전에는 부족하지 않았다고 생각했는데 Java 17을 써서 그런가 빌드 할 때 램이 많이 부족한 것 같아서 Swap 메모리 2기가를 추가로 설정했다.  
+추가로 build.gradle에서 아래와 같이 설정한다면 테스트 시 사용하는 램을 늘릴 수 있다. 기본값은 512MB라고 한다.  
+
+```groovy
+test {
+    maxHeapSize = "1024m"
+}
+```
+
+### Jenkins Blue Ocean
+
+Blue Ocean은 Jenkins Pipeline을 구성하는 데에 있어 편리하게 해주는 도구다.  
+시각화도 잘 되어있고, 설정도 편리한 것 같다.  
+오늘 적용해 보니 램이 부족하여 중간에 잘 안되기도 하고 그래서 그냥 "Pipeline만 사용할 걸 그랬나?" 라는 생각이 든다.  
+
+### 참고 자료
+
+[Elastic Beanstalk, AWS](https://docs.aws.amazon.com/ko_kr/elasticbeanstalk/latest/dg/Welcome.html)  
+[EC2 AWS Graviton, AWS](https://aws.amazon.com/ko/ec2/graviton/)  
+[Default Memory Settings, AWS](https://docs.gradle.org/current/userguide/upgrading_version_4.html#rel5.0:default_memory_settings)

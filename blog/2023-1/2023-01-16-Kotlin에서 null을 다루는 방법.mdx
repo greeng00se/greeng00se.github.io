@@ -1,0 +1,129 @@
+---
+title: "Kotlin에서 null을 다루는 방법"
+slug: kotlin-null
+tags: [Kotlin]
+---
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+### nullable 타입
+
+코틀린은 `NullPointerException` 예외를 최대한 발생시키지 않기 위해 타입 시스템이 설계되어 있다.  
+이는 실행 시점이 아닌 컴파일 시 미리 오류가 발생할 가능성이 있는 부분을 미리 감지하여 NPE 발생의 가능성을 줄여준다.
+
+코틀린의 경우 nullable 타입을 다음과 같이 표현한다.
+
+```kotlin
+val number: Int?
+```
+
+타입 뒤에 `?`를 붙여 해당 값이 null이 될 수 있다는 것을 의미한다.  
+만약 `?`를 붙이지 않을 때 null을 받는 경우 컴파일 시 오류가 발생한다.
+
+### `?.` Safe Calls 연산자
+
+자바에서 NPE를 발생시키지 않기 위해 null을 처리하는 가장 간단한 방법으로는 분기를 사용하는 방법이 있다.
+
+코틀린은 안전한 호출 연산자인 `?.` 연산자를 지원한다.  
+따라서 참조 값이 null이 아닐 경우에만 메서드 호출을 할 수 있다.  
+참조 값이 null인 경우 메서드 호출이 무시되고, null을 반환한다.  
+
+<Tabs>
+<TabItem value="Java" label="Java" default>
+
+```java
+public String repeat(String word) {
+    if (word == null) {
+        return null;
+    }
+    return word.repeat(2);
+}
+```
+
+</TabItem>
+<TabItem value="Kotlin" label="Kotlin">
+
+```kotlin
+fun repeat(word: String?): String? {
+    return word?.repeat(2)
+}
+```
+
+</TabItem>
+</Tabs>
+
+### `?:` 엘비스 연산자
+
+참조하려는 값이 null일 경우 기본 값을 반환하고 싶을 때는 어떻게 해야 할까?  
+코틀린은 null이 아닌 경우 기본 값을 지정할 때 사용할 수 있는 엘비스 연산자를 지원한다.
+
+<Tabs>
+<TabItem value="Java" label="Java" default>
+
+```java
+public String stringSafe(String word) {
+    if (word == null) {
+        return "";
+    }
+    return word;
+}
+```
+
+</TabItem>
+<TabItem value="Kotlin" label="Kotlin">
+
+```kotlin
+fun stringSafe(word: String?): String {
+    return word ?: ""
+}
+```
+
+</TabItem>
+</Tabs>
+
+코틀린에서는 throw도 식이기 때문에 엘비스 연산자를 이용하여 예외를 던질 수 있다.  
+예를 들어 사용자 정보가 있는 저장소에 찾는 사용자가 없는 경우 아래와 같이 사용할 수 있다.
+
+```kotlin
+userRepository.findByName(name) ?: throw IllegalArgumentException()
+```
+
+### `!!` 널 아님 단언 연산자
+
+!! 연산자를 이용한다면 강제로 어떤 값이든 non-nullable 타입으로 변경할 수 있다.  
+하지만 null인 값에 사용한다면 NPE가 발생하게 된다.  
+일반적인 경우에는 !! 연산자를 사용하는 것은 위험하다.  
+사용하기 쉽지만, 리스크가 크고 혹시나 해당 값이 추후에는 null이 될 수 있기 때문에 지양해야 된다고 생각한다.
+
+```kotlin
+val length: Int = word!!.length
+```
+
+### `as?` 안전한 캐스팅
+
+타입 변환을 할 때 지정한 타입으로 변경할 수 없다면 `ClassCastException`이 발생한다.  
+코틀린에서는 as 뒤에 ?를 붙여 안전하게 타입 변환을 할 수 있다.  
+따라서 미리 변환 가능한 타입인지 확인하지 않고, 안전하게 타입을 변환 할 수 있다.  
+
+타입 변환이 불가능 할 경우 예외를 발생시키지 않고 null을 반환한다.
+
+```kotlin
+val value: Int? = something as? Int
+```
+
+### List에서의 null 처리
+
+List에는 null이 아닌 값만 반환하는 `filterNotNull` 유틸리티 메서드를 제공한다.
+
+```kotlin
+val foodsWithNull: List<String?> = listOf("Pizza", "Cheese", null, "Potato")
+val foods = foodsWithNull.filterNotNull()
+```
+
+### 참고 자료
+
+- [Kotlin in Action](https://product.kyobobook.co.kr/detail/S000001804588)
+- [Effective Kotlin Item 8](https://product.kyobobook.co.kr/detail/S000001033129)
+- [Comprehensive Guide to Null Safety in Kotlin](https://www.baeldung.com/kotlin/null-safety)
+- [Kotlin NullSafety](https://kotlinlang.org/docs/null-safety.html)
