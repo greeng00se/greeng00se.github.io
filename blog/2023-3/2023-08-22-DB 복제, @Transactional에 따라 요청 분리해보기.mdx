@@ -1,5 +1,5 @@
 ---
-title: DB Replication
+title: DB 복제, @Transactional에 따라 요청 분리해보기
 slug: db-replication
 tags: [mysql, replication]
 ---
@@ -30,7 +30,7 @@ tags: [mysql, replication]
 
 빠른 응답을 위해 애플리케이션 서버에 가깝게 서버를 구성하거나, 고가용성(High Availability)을 위해서도 사용된다.  
 
-### 복제 원리
+### 바이너리 로그 파일 위치 기반 복제
 
 MySQL 서버에서 발생하는 변경사항에 대한 로그 파일을 바이너리 로그라고 한다.  
 바이너리 로그를 통해 데이터 변경, 테이블 구조 변경, 계정이나 권한 변경에 대한 정보가 저장된다.  
@@ -59,7 +59,117 @@ Replication SQL Thread: 릴레이 로그 파일의 이벤트를 읽고 실행
 
 :::
 
-## Replication 구성하기
+### 바이너리 로그 방식의 문제점
+
+바이너리 로그 방식은 서버에 장애가 발생했을 때 복제 토폴로지 변경이 까다롭다.  
+토폴로지란 네트워크의 요소들을 물리적으로 연결해 놓은 것, 또는 그 연결 방식을 말한다.
+
+```mermaid
+graph TD
+	A[A binary-log:300] --> B[B Binary-log:300]
+	A[A binary-log:300] --> C[C Binary-log:200]
+```
+
+위와 같이 Source 서버, Replica 2대가 존재하고, C 서버에 복제 지연이 되었을 때 문제가 발생한다.  
+
+```mermaid
+graph TD
+	A[A binary-log:300]
+	B[B Binary-log:300] --> C[C Binary-log:200 문제 발생]
+```
+
+A 서버에서 장애가 발생한다면 B 서버를 Source 서버로 승격하고, C에게 조회 쿼리를 분산시킨다.  
+하지만 여기서 C 서버에는 A 서버와 동기화가 안되었으니 조회 시 문제가 발생한다.  
+뒤늦게 B 서버와 동기화를 하려고 해도, 어떤 바이너리 로그, 어떤 위치와 동기화해야하는지 알기 어렵다.   
+
+### 글로벌 트랜잭션 아이디(GTID) 기반 복제
+
+GTID 방식을 사용하여 참여한 모든 데이터베이스가 발생한 이벤트에 고유한 식별값을 부여한다면, 동기화에 대한 문제를 간단하게 해결할 수 있다.  
+위의 예시와 같이 복제 지연과 함께 장애가 발생한다해도 특정 GTID 부터 복제를 재개하면 된다.  
+
+:::note GTID
+복제 토폴로지에 참여한 모든 서버에서 고유하도록 각 이벤트에 부여된 식별값  
+[source_id]:[transaction_id]로 구성되며, source_id는 서버를 식별하기 위한 값이고 transaction_id는 커밋된 트랜잭션을 식별하기 위한 값으로 1씩 증가하는 형태로 발급된다.  
+:::
+
+### 복제 토폴로지
+
+**싱글 레플리카 복제 구성**
+
+가장 간단한 구성으로 제일 많이 사용하는 형태다.  
+replica 서버를 읽기 전용, 예비 서버, 백업 용도로 많이 사용한다.  
+
+```mermaid
+graph LR
+  W[Web Server] -- 읽기 + 쓰기 --> S
+  W -- 읽기 --> R
+  S[Source] --> R[Replica]
+```
+
+**멀티 레플리카 복제 구성**
+
+2개의 replica 서버를 사용하는 형태다.  
+하나의 replica는 예비 용도로 남겨두는 형태다.  
+추후에 트래픽이 증가하는 경우 예비 용도의 replica를 사용함으로 읽기 요청의 부하 분산을 할 수 있다.  
+
+```mermaid
+graph LR
+  W[Web Server] -- 읽기 + 쓰기 --> S
+  W -- 읽기 --> R1
+  S[Source] --> R1[Replica1]
+  S --> R2[Replica2]
+```
+
+**체인 복제 구성**
+
+replica 서버가 많은 경우 바이너리 로그를 전달하는 작업 자체가 부하가 될 수 있다.  
+따라서 1:M:M 구조로 체인 복제 구성을 고려할 수 있다.  
+
+```mermaid
+graph LR
+  W[Web Server] -- 읽기 + 쓰기 --> S
+  W -- 읽기 --> R1
+  S[Source] --> R1[Replica1]
+  S --> R2[Replica2]
+  S --> R3[Replica3]
+
+  R3 --> R3-1[Replica 3-1]
+  R3 --> R3-2[Replica 3-2]
+
+  B[Batch Server] --> R3-2
+```
+
+**듀얼 소스 복제 구성**
+
+2개의 MySQL 서버 모두 읽기와 쓰기가 가능하도록 하는 구성이다.  
+각 서버에서 변경된 데이터는 다른 서버에 반영된다.  
+목적에 따라 ACTIVE-ACTIVE 형태 또는 ACTIVE-PASSIVE 형태로 사용할 수 있다.  
+ACTIVE-PASSIVE 형태인 경우 싱글 레플리카 복제 구성과 동일해보이지만, ACTIVE 서버에서 문제가 발생하면 설정의 변경없이 PASSIVE 서버로 쓰기 작업을 전환할 수 있다는 것이 장점이다.  
+
+```mermaid
+graph LR
+  W[Web Server] -- 읽기 + 쓰기 --> SR1
+  W -- 읽기 + 쓰기 --> SR2
+  SR1[Source/Replica 1] --> SR2[Source/Replica 2]
+```
+
+:::note ACTIVE-ACTIVE, ACTIVE-PASSIVE
+ACTIVE-ACTIVE: 2개의 서버 모두 쓰기 작업을 수행하는 형태  
+ACTIVE-PASSIVE: 하나의 서버에서만 쓰기 작업을 수행하는 형태
+:::
+
+**멀티 소스 복제 구성**
+
+여러개의 source 서버와 하나의 replica 서버를 사용하는 구성이다.  
+이는 source 서버의 데이터를 한 곳에 백업하는 용도로 사용, 여러 서버에 존재하는 데이터를 통합, 샤딩되어있는 테이블 데이터를 통합할 때 사용한다.  
+
+```mermaid
+graph LR
+  S1[Source 1] --> R[Replica]
+  S2[Source 2] --> R
+```
+
+## 바이너리 로그 방식 Replication 구성하기
 
 mysql 2대를 이용하여 replication을 구성하고, spring boot application으로 source, replica 데이터베이스에 접근해보는 예제이다.  
 [https://github.com/bbiac/db-replication](https://github.com/bbiac/db-replication)  
@@ -229,6 +339,7 @@ docker exec -it mysql-replica mysql -u root -p
 ### replica 설정
 
 이전에 source db에서 얻었던 정보들을 사용하여 replica 설정을 진행한다.  
+실제 DB 서버에서 복제하는 경우 추가적으로 source DB의 파일을 복제해야하지만 현재 복제할 데이터가 없기 때문에 해당 부분은 생략했다.  
 SOURCE_HOST, SOURCE_LOG_FILE, SOURCE_LOG_POS 를 적절히 변경한다.
 
 ```mysql
@@ -401,6 +512,15 @@ public class DataSourceConfiguration {
         return new LazyConnectionDataSourceProxy(routingDataSource);
     }
 }
+```
+
+최종적으로 DataSource 빈은 다음과 같은 형태가 된다.  
+
+```mermaid
+graph LR
+  DSP[LazyConnectionDataSourceProxy] --> RDS[RoutingDataSource]
+	RDS --> S[SourceDataSource]
+	RDS --> R[ReplicaDataSource]
 ```
 
 ### 동작 확인
