@@ -177,7 +177,7 @@ mysql 2대를 이용하여 replication을 구성하고, spring boot application�
 ### MySQL 환경 구성
 
 MySQL 버전은 8.1을 사용했다.  
-3306, 3307 포트를 사용해서 MySQL 서버 2대를 띄웠다.  
+13306, 13307 포트를 사용해서 MySQL 서버 2대를 띄웠다.  
 또한 사실 IP 대역으로 통신할 수 있도록 커스텀 네트워크를 추가했다.  
 
 ```yml
@@ -196,7 +196,7 @@ services:
       MYSQL_PASSWORD: 'password'
       MYSQL_ROOT_PASSWORD: 'password'
     ports:
-      - "3306:3306"
+      - "13306:3306"
     volumes:
       - db-source:/var/lib/mysql
       - db-source:/var/lib/mysql-files
@@ -216,7 +216,7 @@ services:
       MYSQL_PASSWORD: 'password'
       MYSQL_ROOT_PASSWORD: 'password'
     ports:
-      - "3307:3306"
+      - "13307:3306"
     volumes:
       - db-replica:/var/lib/mysql
       - db-replica:/var/lib/mysql-files
@@ -396,12 +396,12 @@ spring:
       username: user
       password: password
       driver-class-name: com.mysql.cj.jdbc.Driver
-      jdbc-url: jdbc:mysql://localhost:3306/db
+      jdbc-url: jdbc:mysql://localhost:13306/db
     replica:
       username: user
       password: password
       driver-class-name: com.mysql.cj.jdbc.Driver
-      jdbc-url: jdbc:mysql://localhost:3307/db
+      jdbc-url: jdbc:mysql://localhost:13307/db
 ```
 
 ### DataSourceType 설정
