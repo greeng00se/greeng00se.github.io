@@ -323,9 +323,10 @@ docker inspect -f 옵션을 사용하면 해당 컨테이너의 세부 정보를
 다음 명령어를 이용해 docker-compose 파일에 설정해둔 mysql_network에서 사용되는 사설 아이피 주소를 확인한다.  
 
 ```bash
-docker inspect -f "{{ .NetworkSettings.Networks.db_mysql_network.IPAddress }}" mysql-source
+docker inspect -f "{{with index .NetworkSettings.Networks \"db-replication_mysql_network\"}}{{.IPAddress}}{{end}}" mysql-source
 ```
 
+ip 주소가 나오지 않는 경우 docker inspect mysql-source로 확인한다.  
 확인한 IP주소(SOURCE_HOST) 값은 replica 설정에서 사용한다.
 
 ### replica mysql 접속
