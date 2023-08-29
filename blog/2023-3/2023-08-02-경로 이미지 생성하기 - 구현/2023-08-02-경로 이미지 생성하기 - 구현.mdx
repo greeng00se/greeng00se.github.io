@@ -6,7 +6,7 @@ tags: [image, awt]
 
 ## 개요
 
-위와 같이 여행에 대한 경로를 보여주기 위해 경로 이미지를 생성하는 기능을 추가했다.  
+여행에 대한 경로를 보여주기 위해 경로 이미지를 생성하는 기능을 추가했다.  
 경로 이미지에 대한 요구사항 및 기술 선택에 대한 내용은 [링크](./route-image-intro)에 있다.
 
 ### 구현 결과
@@ -36,16 +36,16 @@ private static final int IMAGE_SIZE = 800;
 private static final int ROUTE_SIZE = 600;
 ```
 
-코드를 보면 이미지 크기와 경로 크기가 있습니다.  
-이미지 크기는 말 그대로 이미지의 width와 height를 의미한다.  
-경로 크기의 경우 상하좌우 100px 만큼의 간격을 위해 존재한다.  
-따라서 실제 경로 그려지는 크기는 600 * 600 사이즈로 생성된다.  
+코드를 보면 IMAGE_SIZE와 ROUTE_SIZE가 있다.  
+IMAGE_SIZE는 말 그대로 이미지의 width와 height를 의미한다.  
+ROUTE_SIZE의 경우 상하좌우 100px 만큼의 간격을 위해 존재한다.  
+따라서 실제 경로 이미지의 크기는 600 * 600 사이즈로 생성된다.  
 
 ![./600.png](./600.png)
 
 **사이즈 변경의 이유**
 
-255 * 255 정도의 작은 사이즈로 이미지를 생성해보려고 했는데 화질이 너무 안좋아서 800으로 변경했다.
+255 * 255 정도의 작은 사이즈로 이미지를 생성해보려고 했는데, 이미지의 선명도가 좋지 않아 800 * 800 사이즈로 변경했다.
 
 ## 주요 클래스
 
@@ -53,7 +53,7 @@ private static final int ROUTE_SIZE = 600;
 
 | 클래스명 | 설명 | 특이사항 |
 | --- | --- | --- |
-| Coordinate | 위도, 경도로 이루어진 위치 값 | 좌표를 뜻하지만 Point와 구분하기 위해 longitude, latitude를 사용하지 않고 x, y 사용 |
+| Coordinate | 위도, 경도로 이루어진 위치 값 | 좌표를 뜻하지만 여행 도메인에 포함된 Point 클래스와 구분하기 위해 longitude, latitude를 사용하지 않고 x, y 사용 |
 | Coordinates | Coordinate의 일급 컬렉션 | - |
 | Position | 실제 이미지 생성에 사용할 위치 값 | Integer 타입의 x, y 사용 |
 | Positions | Positions의 일급 컬렉션 | - |
@@ -61,7 +61,7 @@ private static final int ROUTE_SIZE = 600;
 | RouteImageUploader | BufferedImage를 받아 서버에 업로드 하는 클래스 | 현재 업로드 위치가 정해지지 않아 일단 기본(프로젝트 루트) 위치에 생성 |
 | RouteImageGenerator | 이미지를 생성하고 업로드하는 서비스 | 여행 종료, 감상 저장시 해당 클래스를 통해 이미지 생성 요청  |
 | BufferedImage(AWT) | 이미지 데이터를 처리하고 조작하는 데 사용 | 왼쪽 상단의 좌표가 (0, 0) |
-| Graphics2D(AWT) | 선 그리기, 색상 관리 등을 지원하는 클래스 실제 해당 클래스의 draw 메서드를 경로를 그림 | JDK1.2 이후에 추가됨, 2D(평면) 그래픽 환경을 지원, bufferedImage.createGraphics 메서드를 통해 생성 |
+| Graphics2D(AWT) | 선 그리기, 색상 관리 등을 지원하는 클래스 실제 해당 클래스의 draw 메서드를 경로를 그림 | JDK 1.2 이후에 추가됨, 2D(평면) 그래픽 환경을 지원, bufferedImage.createGraphics 메서드를 통해 생성 |
 
 ### 의존관계
 
@@ -118,8 +118,8 @@ private int mapToPosition(Double coordinate, Integer routeImageSize) {
 
 위도로 예시든 내용이다.
 
-1. Collections.min(values) → 위도를 받아 위도 리스트의 최소값을 구한다.
-2. normalizeCoordinate → 각 값에서 최소값을 빼고 0 ~ 1 사이 값으로 변환 후 **위경도의 최대 차이**로 나눈다.
+1. Collections.min(values) → 위도 리스트의 최소값을 구한다.
+2. normalizeCoordinate → 각각의 위도 값에서 최소값을 빼고 0 ~ 1 사이 값으로 변환 후 **위경도의 최대 차이**로 나눈다.
 3. mapToPosition → 그래프 크기를 받아 0 ~ 1 사이 값을 실제 이미지를 위한 위치값으로 변환한다.
 
 ### Positions(실제 이미지 생성에 사용할 위치)
@@ -132,7 +132,7 @@ Positions 클래스에는 다음 다섯 개의 인터페이스가 존재한다.
 - xPositions: x 값들을 반환한다.
 - yPositions: y 값들을 반환한다.
 
-중앙 정렬 로직은 다음과 같습니다.  
+중앙 정렬 로직은 다음과 같다.  
 
 ```java title="Positions.java"
 public Positions align(int imageSize, int routeSize) {
@@ -183,7 +183,7 @@ private static final Stroke LINE_STROKE = new BasicStroke(LINE_STROKE_WIDTH, CAP
 // 위치 점을 위한 STROKE
 private static final int POINT_STROKE_WIDTH = 20;
 private static final Stroke POINT_STROKE = new BasicStroke(POINT_STROKE_WIDTH, CAP_ROUND, JOIN_ROUND);
-// 안티앨리어싱 등 화질이 안좋은 이미지를 개선하기 위한 설정
+// 안티앨리어싱 등 화질 개선을 위한 설정
 private static final Map<Object, Object> renderingHints = Map.of(
         RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON,
         RenderingHints.KEY_RENDERING, RenderingHints.VALUE_RENDER_QUALITY,
