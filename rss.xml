@@ -4,10 +4,23 @@
         <title>GG Blog</title>
         <link>https://greeng00se.github.io/</link>
         <description>GG Blog</description>
-        <lastBuildDate>Tue, 22 Aug 2023 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 10 Sep 2023 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>ko</language>
+        <item>
+            <title><![CDATA[성능 테스트]]></title>
+            <link>https://greeng00se.github.io/performance-test</link>
+            <guid>https://greeng00se.github.io/performance-test</guid>
+            <pubDate>Sun, 10 Sep 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[성능 테스트]]></description>
+            <content:encoded><![CDATA[<h3 class="anchor anchorWithStickyNavbar_LWe7" id="성능-테스트">성능 테스트<a href="#성능-테스트" class="hash-link" aria-label="성능 테스트에 대한 직접 링크" title="성능 테스트에 대한 직접 링크">​</a></h3><p>API의 요청이 많은 상황에서 서버가 어떻게 동작하는지 확인하는 테스트</p><p>시스템에 부하가 걸리면 문제 상황이 발생할 수 있다.<br>
+<!-- -->다양한 상황에 대비해서 성능 테스트를 해야한다.  </p><p><img loading="lazy" alt="./test.png" src="/assets/images/test-355aba93f96ef7d6a0f3161bf6a9c25e.png" width="2168" height="1002" class="img_ev3q"></p><h3 class="anchor anchorWithStickyNavbar_LWe7" id="참고-자료">참고 자료<a href="#참고-자료" class="hash-link" aria-label="참고 자료에 대한 직접 링크" title="참고 자료에 대한 직접 링크">​</a></h3><p><a href="https://k6.io/docs/test-types/load-test-types/" target="_blank" rel="noopener noreferrer">Load test types, k6</a><br>
+<!-- -->자바 최적화 - 벤저민 J. 에번스, 제임스 고프, 크리스 뉴랜드
+아마존 웹 서비스 부하 테스트 입문 - 나카가와 타루하치, 모리시타 켄</p>]]></content:encoded>
+            <category>Mockito</category>
+            <category>static</category>
+        </item>
         <item>
             <title><![CDATA[DB 복제, @Transactional에 따라 요청 분리해보기]]></title>
             <link>https://greeng00se.github.io/db-replication</link>

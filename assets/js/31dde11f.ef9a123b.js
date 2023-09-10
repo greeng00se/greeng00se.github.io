@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[3794],{72309:e=>{e.exports=JSON.parse('{"permalink":"/tags/mockito/page/2","page":2,"postsPerPage":1,"totalPages":2,"totalCount":2,"previousPage":"/tags/mockito","blogDescription":"Blog","blogTitle":"Blog"}')}}]);
