@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[6468],{94822:e=>{e.exports=JSON.parse('{"label":"Woowahan Techcourse","permalink":"/tags/woowahan-techcourse","allTagsPath":"/tags","count":12}')}}]);
