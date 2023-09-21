@@ -13,9 +13,9 @@ tags: [async, exception]
 
 스프링 4.1 부터 제공되는 [AsyncUncaughtExceptionHandler](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/aop/interceptor/AsyncUncaughtExceptionHandler.html)의 경우 반환 타입이 void인 비동기 메서드를 예외 처리하기 쉽도록 도와준다.  
 
-따라서 AsyncUncaughtExceptionHandler 구현해서 예외를 핸들링하는 클래스를 생성했다.  
+따라서 AsyncUncaughtExceptionHandler 인터페이스를 구현해서 예외를 핸들링하는 클래스를 생성했다.  
 기존의 동기 예외 처리의 경우 예외가 발생할 때 실행 흐름을 추적하기 위해 MDC(Mapped Diagnostic Context)를 사용하고 있다.  
-비동기 예외 처리의 경우에도 마찬가지로 MDC의 정보를 가져와서 로그를 출력하도록 설정했다.  
+비동기 예외 처리도 마찬가지로 MDC의 정보를 가져와서 로그를 출력하도록 설정했다.  
 
 ```java title=AsyncExceptionHandler
 @Slf4j
@@ -45,11 +45,11 @@ public class AsyncConfig implements AsyncConfigurer {
 }
 ```
 
-이제 비동기 상황에서 예외가 발생하는 경우 AsyncUncaughtExceptionHandler의 구현체인 AsyncExceptionHandler가 예외를 잡아서 처리를 해준다.  
+이제 비동기 상황에서 예외가 발생하는 경우 AsyncUncaughtExceptionHandler의 구현체인 AsyncExceptionHandler가 예외를 잡아 처리한다.  
 
 ### MDC 정보 연동 문제
 
-비동기 처리의 경우 별도의 스레드에서 동작하기 때문에 ThreadLocal 기반으로 동작하는 MDC의 정보를 얻어올 수 없었다.  
+비동기 처리의 경우 별도의 스레드에서 동작하기 때문에 ThreadLocal 기반으로 동작하는 MDC의 정보를 얻어올 수 없는 문제가 발생했다.  
 
 ![./mdc-null.png](./mdc-null.png)
 
@@ -69,7 +69,7 @@ public class MdcTaskDecorator implements TaskDecorator {
 }
 ```
 
-해당 Decorator 클래스를 설정 파일에 등록해 준다.
+생성한 Decorator 클래스를 설정 파일에 등록해 준다.
 
 ```java title=AsyncConfig
 @RequiredArgsConstructor
