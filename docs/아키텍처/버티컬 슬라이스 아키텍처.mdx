@@ -1,0 +1,36 @@
+---
+title: 버티컬 슬라이스 아키텍처
+slug: /architecture/virtical-slice-architecture
+last_update:
+  date: 2023/09/22
+tags: [architecture]
+---
+
+### 개요
+
+기존의 Layered Architecture → 레이어별 역할과 책임을 나눠서 구현  
+Virtical Slice Architecture → Feature라는 하나의 클래스에 응집시켜 구현하는 구조
+
+### 특징
+
+Transactional과 Controller가 같이 붙어있는 형태를 띈다.  
+빠른 피드백 사이클을 가진 신규 서비스의 경우 핵심 비즈니스 로직에 집중이 가능하다.  
+기능별로 구현하기 때문에 사이드 이펙트가 적다.  
+작은 규모의 조직, 코드 품질 관리가 이루어지는 조직에 적합하다.  
+
+### 주의 사항
+
+한 곳에 기능이 집중되어 있기 때문에 스파게티 코드가 되지 않도록 지속적으로 코드 품질을 관리해야한다.  
+DB에 바로 접근할 수 있기 때문에 DB 중심의 개발이 되지 않도록 주의해야 한다.  
+
+### 테스트 작성
+
+API → 통합 테스트
+도메인 -> 단위 테스트
+
+### 참고 자료
+
+버티컬 슬라이스 아키텍처, 유스콘 23  
+[Vertical Slice Architecture, NDC, Jimmy Bogard](https://www.youtube.com/watch?v=SUiWfhAhgQw&t=2116s)  
+[Vertical Slice Architecture, Jimmy Bogard](https://www.jimmybogard.com/vertical-slice-architecture/)  
+
