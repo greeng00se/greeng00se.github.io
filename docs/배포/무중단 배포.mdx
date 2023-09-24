@@ -1,0 +1,36 @@
+---
+title: 무중단 배포
+slug: /deploy/zero-downtime
+last_update:
+  date: 2023/09/24
+tags: [deploy, zero-downtime]
+---
+
+### 무중단 배포
+
+운영중인 서버를 중단하지 않고, 새로운 애플리케이션을 배포하는 것  
+로드밸런서를 통해 트래픽을 제어하는 방법으로 배포할 수 있다.  
+
+### 롤링 배포(Rolling Deployment)
+
+애플리케이션이 실행되는 환경을 완전히 전환하여, 이전 버전의 애플리케이션을 새로운 버전으로 점진적으로 대체하는 전략이다.  
+롤링 배포는 일반적으로 블루/그린 배포보다 빠르지만, 블루/그린 배포와 달리 격리된 환경에서 배포가 이루어지지 않는다.  
+격리된 환경에서 이루어지지 않기 때문에, 새로운 버전이 이전 버전과 호환이 되지 않는다면 배포 시점에 문제가 발생하거나, 배포 실패시 롤백을 하기 어려워질 수 있다.  
+
+### 블루 그린 배포(Blue/Green Deployment)
+
+블루를 이전 버전, 그린을 새로운 버전으로 구성한 후, 로드밸런서를 이용하여 그린으로 트래픽을 전환하는 배포 방식이다.  
+배포가 실패할 경우, 간단하게 롤백을 할 수 있기 때문에 배포 위험을 줄일 수 있지만 시스템 자원이 두 배로 필요하다는 단점이 있다.  
+
+### 카나리 배포(Canary Deployment)
+
+애플리케이션을 단계적으로 배포하는 방식이다.  
+위험을 알려주는 카나리아 새를 탄광에 먼저 보내는 것 처럼, 일정 비율을 먼저 신버전으로 전환하고 문제가 없는 경우 늘려나가는 형태로 배포한다.  
+카나리는 테스트가 부족하거나 신뢰할 수 없는 경우, 새 릴리스의 안정성에 대한 확신이 없는 경우에 주로 사용된다.  
+
+### 참고 자료
+
+[무중단 배포 아키텍처, SAMSUNG SDS](https://www.samsungsds.com/kr/insights/1256264_4627.html)  
+[Rolling Deployments, AWS](https://docs.aws.amazon.com/whitepapers/latest/overview-deployment-options/rolling-deployments.html)  
+[Software Deployment, codefresh](https://codefresh.io/learn/software-deployment/)  
+[Deployment Strategies, Etienne Tremel](https://blog.container-solutions.com/deployment-strategies)  
