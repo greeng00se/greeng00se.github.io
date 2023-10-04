@@ -867,7 +867,7 @@
 <!-- -->격리 수준이 높아질 수록 동시 처리 성능이 떨어지는 것이 일반적이지만, <code>SERIALIZABLE</code>이 아니라면 크게 성능의 저하가 발생하지 않는다.  </p><h3 class="anchor anchorWithStickyNavbar_LWe7" id="read-uncommitted">READ UNCOMMITTED<a href="#read-uncommitted" class="hash-link" aria-label="READ UNCOMMITTED에 대한 직접 링크" title="READ UNCOMMITTED에 대한 직접 링크">​</a></h3><p>각 트랜잭션에서의 변경 내용이 <code>COMMIT</code>이나 <code>ROLLBACK</code> 여부에 상관없이 다른 트랜잭션에서 보인다.<br>
 <!-- -->더티 리드 현상이 발생하기 때문에 정합성의 문제가 많은 격리 수준이다.<br>
 <!-- -->MySQL 사용시 최소 <code>READ COMMITTED</code> 이상의 격리 수준 사용을 권장한다.  </p><h3 class="anchor anchorWithStickyNavbar_LWe7" id="read-committed">READ COMMITTED<a href="#read-committed" class="hash-link" aria-label="READ COMMITTED에 대한 직접 링크" title="READ COMMITTED에 대한 직접 링크">​</a></h3><p>트랜잭션에서 데이터를 변경하더라도 <code>COMMIT</code>이 완료된 데이터만 다른 트랜잭션에서 조회할 수 있다.<br>
-<!-- -->오라클 DBMS에서 기본으로 사용되는 격리 수준이며, 온라인 서비스에서 가장 많이 선택되는 격리 수준이다.<br>
+<!-- -->오라클 DBMS에서 기본으로 사용되는 격리 수준이다.<br>
 <code>REPEATABLE READ</code>가 보장되지 않기 때문에 <code>NON-REPEATABLE READ</code> 문제가 발생한다.  </p><h3 class="anchor anchorWithStickyNavbar_LWe7" id="repeatable-read">REPEATABLE READ<a href="#repeatable-read" class="hash-link" aria-label="REPEATABLE READ에 대한 직접 링크" title="REPEATABLE READ에 대한 직접 링크">​</a></h3><p>트랜잭션이 시작되기 전에 <code>COMMIT</code>이 완료된 내용에 대해서만 조회할 수 있다.<br>
 <!-- -->MySQL의 InnoDB 스토리지 엔진에서 기본으로 사용되는 격리 수준이다.<br>
 <!-- -->MVCC를 이용해 언두(Undo) 영역에 백업된 이전 데이터를 이용해 동일 트랜잭션 내에서는 동일한 결과를 보여줄 수 있게 보장한다.<br>
