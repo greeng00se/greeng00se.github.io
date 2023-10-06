@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[7857],{25381:e=>{e.exports=JSON.parse('{"permalink":"/tags/woowahan-techcourse","page":1,"postsPerPage":1,"totalPages":14,"totalCount":14,"nextPage":"/tags/woowahan-techcourse/page/2","blogDescription":"Blog","blogTitle":"Blog"}')}}]);
