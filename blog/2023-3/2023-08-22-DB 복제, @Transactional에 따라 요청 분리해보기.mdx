@@ -472,7 +472,10 @@ public class RoutingDataSource extends AbstractRoutingDataSource {
 
 위에서부터 순서대로 Source, Replica, RoutingDataSource, LazyConnectionDataSourceProxy 설정이다.  
 스프링은 트랜잭션 시작시에 커넥션의 사용여부와 상관없이 커넥션을 확보한다.  
-따라서 readOnly 트랜잭션이 설정된 메서드를 사용하더라도 미리 확보된 커넥션을 사용하기 때문에 replica db로 요청을 하지 않고 setDefaultTargetDataSource로 설정한 source db로 요청을 한다.  
+따라서 readOnly 트랜잭션이 설정된 메서드를 사용하더라도 미리 확보된 커넥션을 사용하기 때문에 replica db로 요청을 하지 않고 source db로 요청을 한다.  
+
+TransactionSynchronizationManager.isCurrentTransactionReadOnly() 메서드 호출 시 currentTransactionReadOnly라는 `ThreadLocal<Boolean>`에 설정된 값을 반환하는데 readOnly 설정이 되면 이 값을 true로 설정한다. 하지만 determineCurrentLookupKey를 호출하여 key 값을 가져오는 부분보다 이후에 설정되기 때문에 determineCurrentLookupKey 메서드에서 항상 DataSourceType.SOURCE가 반환되어 source db로 요청을 한다.  
+
 LazyConnectionDataSourceProxy를 설정하는 경우 실제 DataSource를 사용하는 시점에 커넥션을 획득해서 사용하기 때문에 설정한대로 replica db로 조회 요청을 한다.  
 
 ```java title="DataSourceConfiguration"
