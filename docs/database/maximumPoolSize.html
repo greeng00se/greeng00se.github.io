@@ -13,8 +13,8 @@
 
 
 <link rel="search" type="application/opensearchdescription+xml" title="GG" href="/opensearch.xml"><link rel="stylesheet" href="/assets/css/styles.ca6d2131.css">
-<link rel="preload" href="/assets/js/runtime~main.475ed87f.js" as="script">
-<link rel="preload" href="/assets/js/main.a2858f97.js" as="script">
+<link rel="preload" href="/assets/js/runtime~main.46a193ef.js" as="script">
+<link rel="preload" href="/assets/js/main.8092b600.js" as="script">
 </head>
 <body class="navigation-with-keyboard">
 <script>!function(){function e(e){document.documentElement.setAttribute("data-theme",e)}var t=function(){var e=null;try{e=new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(e){}return e}()||function(){var e=null;try{e=localStorage.getItem("theme")}catch(e){}return e}();null!==t?e(t):window.matchMedia("(prefers-color-scheme: dark)").matches?e("dark"):window.matchMedia("(prefers-color-scheme: light)").matches?e("light"):e("dark")}()</script><div id="__docusaurus">
@@ -22,7 +22,7 @@
 <!-- -->effective spindle count의 경우 하드디스크와 관련이 있다. 한 개의 하드디스크는 하나의 spindle을 가진다.  </p><p>2개의 코어를 가지고 있는 t4g.small의 경우 해당 공식을 적용하면 (2 * 2) + 1이 된다.<br>
 <!-- -->해당 공식이 SSD를 사용해도 잘 적용하는지에 대한 내용은 없었지만, 클라우드 환경에서는 해당 공식이 잘 적용된 것 같다.<br>
 <!-- -->쿼리를 실행하는데 시간이 많이 걸리는 경우 상황에 따라서 풀 사이즈를 늘릴 수 있을 것 같다.</p><p>만약 하나의 스레드가 여러 개의 커넥션을 들고 있는 경우 데드락이 문제가 될 수 있는데 이를 방지하려면 다음과 같은 공식을 사용할 수 있다.  </p><blockquote><p>pool size = Tn x (Cm - 1) + 1</p></blockquote><p>Tn은 코어 수, Cm의 경우 단일 요청이 사용하는 최대 동시 연결 수다.  </p><p>공식이 존재하지만 결국 애플리케이션이 작동하는 방식에 따라 적합한 pool size가 존재하니 애플리케이션의 성격이나, 성능 테스트를 통해 적합한 사이즈를 설정하는 것이 적합하다고 생각한다.  </p><h3 class="anchor anchorWithStickyNavbar_LWe7" id="참고-자료">참고 자료<a href="#참고-자료" class="hash-link" aria-label="참고 자료에 대한 직접 링크" title="참고 자료에 대한 직접 링크">​</a></h3><p><a href="https://github.com/brettwooldridge/HikariCP" target="_blank" rel="noopener noreferrer">https://github.com/brettwooldridge/HikariCP</a></p></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="theme-doc-footer-edit-meta-row row"><div class="col"><a href="https://github.com/greeng00se/greeng00se.github.io/tree/main/docs/데이터베이스/Connection Pool.mdx" target="_blank" rel="noreferrer noopener" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>페이지 편집</a></div><div class="col lastUpdated_vwxv"><span class="theme-last-updated">최종 수정: <!-- --> <b><time datetime="2023-10-17T00:00:00.000Z">2023년 10월 17일</time></b>에</span></div></div></footer></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="문서 페이지"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/network/load-balancing"><div class="pagination-nav__sublabel">이전</div><div class="pagination-nav__label">로드 밸런싱</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/database/query-execution"><div class="pagination-nav__sublabel">다음</div><div class="pagination-nav__label">쿼리 실행 구조</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#maximumpoolsize" class="table-of-contents__link toc-highlight">maximumPoolSize</a></li><li><a href="#참고-자료" class="table-of-contents__link toc-highlight">참고 자료</a></li></ul></div></div></div></div></main></div></div></div>
-<script src="/assets/js/runtime~main.475ed87f.js"></script>
-<script src="/assets/js/main.a2858f97.js"></script>
+<script src="/assets/js/runtime~main.46a193ef.js"></script>
+<script src="/assets/js/main.8092b600.js"></script>
 </body>
 </html>
