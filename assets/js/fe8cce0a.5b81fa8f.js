@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[955],{78535:e=>{e.exports=JSON.parse('{"label":"IntelliJ","permalink":"/tags/intelli-j","allTagsPath":"/tags","count":1}')}}]);
