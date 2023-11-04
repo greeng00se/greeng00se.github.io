@@ -37,7 +37,6 @@ const config = {
           routeBasePath: '/',
           archiveBasePath: '/blog',
           postsPerPage: 1,
-          sortPosts: 'descending',
 
           editUrl:
             'https://github.com/greeng00se/greeng00se.github.io/tree/main/',
