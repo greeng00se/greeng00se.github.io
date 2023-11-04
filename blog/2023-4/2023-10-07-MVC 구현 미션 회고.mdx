@@ -36,7 +36,7 @@ graph LR
 
 1. @Controller가 적용된 클래스의 정보를 스캔하여 반환한다.  
 2. @Controller가 적용된 클래스의 @RequestMapping이 적용된 메서드들의 정보를 반환한다.  
-3. 각 메서드들을 순회하며 HandlerKey(uri + httpMethod 정보)와 HandlerExecution(인스턴스 + 실행하려는 메서드)을 생성하여 Map<HandlerKey, HandlerExecution>에 추가한다.  
+3. 각 메서드들을 순회하며 HandlerKey(uri + httpMethod 정보)와 HandlerExecution(인스턴스 + 실행하려는 메서드)을 생성하여 `Map<HandlerKey, HandlerExecution>`에 추가한다.  
 
 AnnotationHandlerMapping의 initialize 메서드에서 Handler를 등록한다. 코드는 다음과 같다.  
 
