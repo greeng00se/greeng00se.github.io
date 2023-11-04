@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[448],{92252:a=>{a.exports=JSON.parse('{"label":"Elastic Beanstalk","permalink":"/tags/elastic-beanstalk","allTagsPath":"/tags","count":1}')}}]);

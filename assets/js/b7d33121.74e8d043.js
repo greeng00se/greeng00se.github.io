@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[7153],{72005:e=>{e.exports=JSON.parse('{"label":"cloudwatch","permalink":"/tags/cloudwatch","allTagsPath":"/tags","count":1,"unlisted":false}')}}]);
