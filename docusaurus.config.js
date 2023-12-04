@@ -75,12 +75,12 @@ const config = {
             label: '블로그', 
             position: 'left'
           },
-          {
-            position: 'left',
-            type: 'doc',
-            label: '문서',
-            docId: 'intro',
-          },
+          // {
+          //   position: 'left',
+          //   type: 'doc',
+          //   label: '문서',
+          //   docId: 'intro',
+          // },
           {
             href: 'https://github.com/greeng00se',
             position: 'right',
