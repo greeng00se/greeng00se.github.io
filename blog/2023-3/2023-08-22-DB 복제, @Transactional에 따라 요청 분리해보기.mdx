@@ -434,7 +434,7 @@ public enum DataSourceType {
 
 스프링이 지원해주는 AbstractRoutingDataSource를 상속받아 트랜잭션의 읽기 여부에 따라 다른 DataSource를 향하도록 설정한다.  
 
-정적 팩터리 메서드는 Map<DataSourceKey, DataSource>에 해당하는 값을 받아 데이터 소스를 설정한다.  
+정적 팩터리 메서드는 `Map<DataSourceKey, DataSource>`에 해당하는 값을 받아 데이터 소스를 설정한다.  
 - setDefaultTargetDataSource: 기본 데이터 소스를 설정한다.  
 - setTargetDataSources: 맵 형태로 받은 데이터 소스 값들을 설정한다.   
 
