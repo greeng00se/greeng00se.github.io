@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[2773],{8086:e=>{e.exports=JSON.parse('{"label":"Mockito","permalink":"/tags/mockito","allTagsPath":"/tags","count":1,"unlisted":false}')}}]);
